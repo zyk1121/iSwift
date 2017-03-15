@@ -29,7 +29,10 @@ class ViewController: UIViewController {
 //        
 //        YKPortal.registerPortalWithHandler(handler: { (URL, transferType, sourceViewController) -> UIViewController in
 //            return Test()
-//        }, prefixURL: NSURL(string: "ddd")!)
+//        }, prefixURL: NSURL(string: "ishowmap://ishowmap/test")!)
+        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: "ishowmap://ishowmap/test")!,transferType: YKTransferType(rawValue: 0)!) { (vc, error) in
+            print("hello www:")
+        }
     }
 }
 
@@ -38,12 +41,17 @@ class ViewController: UIViewController {
 class Test: UIViewController {
     static func portalLoad()
     {
-        print("portalLoad")
-         print("portalLoad2")
+        YKPortal.registerPortalWithHandler(handler: { (URL, transferType, sourceViewController) -> UIViewController in
+            let vc = Test()
+            sourceViewController.navigationController?.pushViewController(vc, animated: true)
+            return vc
+        }, prefixURL: NSURL(string: "ishowmap://ishowmap/test")!)
     }
      public override class func initialize()
      {
          portalLoad()
-    
+        
     }
+
+    
 }
