@@ -24,17 +24,26 @@ class ViewController: UIViewController {
     // 点击页面
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        let test = Test()
-        self.navigationController?.pushViewController(test, animated: true)
-        
-        YKPortal.registerPortalWithHandler(handler: { (URL, transferType, sourceViewController) -> UIViewController in
-            return Test()
-        }, prefixURL: NSURL(string: "ddd")!)
+//        let test = Test()
+//        self.navigationController?.pushViewController(test, animated: true)
+//        
+//        YKPortal.registerPortalWithHandler(handler: { (URL, transferType, sourceViewController) -> UIViewController in
+//            return Test()
+//        }, prefixURL: NSURL(string: "ddd")!)
     }
 }
 
 
 
 class Test: UIViewController {
+    static func portalLoad()
+    {
+        print("portalLoad")
+         print("portalLoad2")
+    }
+     public override class func initialize()
+     {
+         portalLoad()
     
+    }
 }

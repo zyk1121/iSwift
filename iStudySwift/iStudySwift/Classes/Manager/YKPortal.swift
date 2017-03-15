@@ -19,9 +19,19 @@ enum YKTransferType : Int {
 typealias YKPortalHandler = (_ URL:NSURL, _ transferType:YKTransferType, _ sourceViewController:UIViewController) -> UIViewController;
 
 //MARK:传输门
-class YKPortal : NSObject
+class YKPortal
 {
-    var test = Test()
+    static var portalClasses:[AnyClass] = []
+    
+    
+    // 注册类（页面）、注册的类会调用initialize方法
+    static func registerClasses()
+    {
+        // 移除原有的数据
+        portalClasses.removeAll()
+        // 添加新数据
+        portalClasses.append(Test.self)
+    }
     
     // 注册传输门
     static func registerPortalWithHandler(handler:YKPortalHandler, prefixURL:NSURL)
