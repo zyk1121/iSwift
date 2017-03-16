@@ -12,6 +12,7 @@
 		761154C71E782DC1006CE801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761154C61E782DC1006CE801 /* Assets.xcassets */; };
 		761154CA1E782DC1006CE801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761154C81E782DC1006CE801 /* LaunchScreen.storyboard */; };
 		761154D51E783E42006CE801 /* YKPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761154D41E783E42006CE801 /* YKPortal.swift */; };
+		76F33ABE1E7AE50D00039737 /* YKTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F33ABD1E7AE50D00039737 /* YKTest.swift */; };
 		7A4603B191B43C54CD6C967E /* Pods_iStudySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB338967D450D58C14C578C /* Pods_iStudySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		761154C91E782DC1006CE801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		761154CB1E782DC1006CE801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761154D41E783E42006CE801 /* YKPortal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKPortal.swift; sourceTree = "<group>"; };
+		76F33ABD1E7AE50D00039737 /* YKTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTest.swift; sourceTree = "<group>"; };
 		8AB338967D450D58C14C578C /* Pods_iStudySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iStudySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,8 +93,41 @@
 		761154D31E782E75006CE801 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				76F33AB91E7AE4F200039737 /* YKNetwork */,
+				76F33ABA1E7AE4F200039737 /* YKProject */,
+				76F33ABB1E7AE4F200039737 /* YKTest */,
+				76F33ABC1E7AE4F200039737 /* YKThirdPart */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		76F33AB91E7AE4F200039737 /* YKNetwork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YKNetwork;
+			sourceTree = "<group>";
+		};
+		76F33ABA1E7AE4F200039737 /* YKProject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YKProject;
+			sourceTree = "<group>";
+		};
+		76F33ABB1E7AE4F200039737 /* YKTest */ = {
+			isa = PBXGroup;
+			children = (
+				76F33ABD1E7AE50D00039737 /* YKTest.swift */,
+			);
+			path = YKTest;
+			sourceTree = "<group>";
+		};
+		76F33ABC1E7AE4F200039737 /* YKThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YKThirdPart;
 			sourceTree = "<group>";
 		};
 		A38AEC5CFB075CB14599F3E3 /* Pods */ = {
@@ -239,6 +274,7 @@
 				761154C21E782DC1006CE801 /* ViewController.swift in Sources */,
 				761154D51E783E42006CE801 /* YKPortal.swift in Sources */,
 				761154C01E782DC1006CE801 /* AppDelegate.swift in Sources */,
+				76F33ABE1E7AE50D00039737 /* YKTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
