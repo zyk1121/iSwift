@@ -47,10 +47,33 @@ class YKWeiBoMainViewController: UITabBarController {
         super.viewDidLoad()
         tabBar.tintColor = UIColor.orange
         // 添加自子控制器
-        addChildViewController(YKWeiboHomeViewController(),titleName: "首页",imageName: "tabbar_home")
-        addChildViewController(YKWeiboMessageViewController(),titleName: "消息",imageName: "tabbar_message_center")
-        addChildViewController(YKWeiboDiscoverViewController(),titleName: "发现",imageName: "tabbar_discover")
-        addChildViewController(YKWeiboMeViewController(),titleName: "我",imageName: "tabbar_profile")
+//        addChildViewController(YKWeiboHomeViewController(),titleName: "首页",imageName: "tabbar_home")
+//        addChildViewController(YKWeiboMessageViewController(),titleName: "消息",imageName: "tabbar_message_center")
+//        addChildViewController(YKWeiboDiscoverViewController(),titleName: "发现",imageName: "tabbar_discover")
+//        addChildViewController(YKWeiboMeViewController(),titleName: "我",imageName: "tabbar_profile")
+
+//        addChildViewController("YKWeiboHomeViewController",titleName: "首页",imageName: "tabbar_home")
+//        addChildViewController("YKWeiboMessageViewController",titleName: "消息",imageName: "tabbar_message_center")
+//        addChildViewController("YKWeiboDiscoverViewController",titleName: "发现",imageName: "tabbar_discover")
+//        addChildViewController("YKWeiboMeViewController",titleName: "我",imageName: "tabbar_profile")
+        
+        // 通过json创建
+        let path  = Bundle.main.path(forResource: "WeiboMainVCSettings.json", ofType: nil)
+        if let jsonPath = path {
+            let jsonData = NSData(contentsOfFile: jsonPath)
+            do {
+                let dictArr = try JSONSerialization.jsonObject(with: jsonData! as Data, options: JSONSerialization.ReadingOptions.mutableContainers)
+                for dict in dictArr as! [[String:String]] {
+                    addChildViewController(dict["vcName"]!, titleName: dict["title"]!, imageName: dict["imageName"]!)
+                }
+            } catch {
+                print(error)
+                addChildViewController("YKWeiboHomeViewController",titleName: "首页",imageName: "tabbar_home")
+                addChildViewController("YKWeiboMessageViewController",titleName: "消息",imageName: "tabbar_message_center")
+                addChildViewController("YKWeiboDiscoverViewController",titleName: "发现",imageName: "tabbar_discover")
+                addChildViewController("YKWeiboMeViewController",titleName: "我",imageName: "tabbar_profile")
+            }
+        }
         
 //        setupUI()
         view.setNeedsUpdateConstraints()
@@ -65,7 +88,13 @@ class YKWeiBoMainViewController: UITabBarController {
         print("必须执行代码deinit才会调用！")
     }
     
-    private func addChildViewController(_ childController: UIViewController,titleName:String, imageName:String) {
+    // 字符串 创建类
+    private func addChildViewController(_ childControllerName: String,titleName:String, imageName:String) {
+        // 动态获取命名空间
+        let ns = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+        let cls:AnyClass? = NSClassFromString(ns + "." + childControllerName)
+        let vcCls = cls as! UIViewController.Type
+        let childController = vcCls.init()
         
         childController.tabBarItem.image = UIImage(named: imageName)
         childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
@@ -75,6 +104,17 @@ class YKWeiBoMainViewController: UITabBarController {
         
         addChildViewController(navVC)
     }
+    
+//    private func addChildViewController(_ childController: UIViewController,titleName:String, imageName:String) {
+//        
+//        childController.tabBarItem.image = UIImage(named: imageName)
+//        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
+//        childController.title = titleName
+//        let navVC = UINavigationController()
+//        navVC.addChildViewController(childController)
+//        
+//        addChildViewController(navVC)
+//    }
     
     
     /// MARK:返回

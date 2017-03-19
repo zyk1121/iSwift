@@ -213,6 +213,7 @@
 		766043191E7E83EB0059E603 /* YKWeiboMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043181E7E83EB0059E603 /* YKWeiboMeViewController.swift */; };
 		7660431B1E7E83FD0059E603 /* YKWeiboMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660431A1E7E83FD0059E603 /* YKWeiboMessageViewController.swift */; };
 		7660431D1E7E840D0059E603 /* YKWeiboPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660431C1E7E840D0059E603 /* YKWeiboPublishViewController.swift */; };
+		7660431F1E7E97670059E603 /* WeiboMainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 7660431E1E7E97670059E603 /* WeiboMainVCSettings.json */; };
 		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
 		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
 		76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */; };
@@ -431,6 +432,7 @@
 		766043181E7E83EB0059E603 /* YKWeiboMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboMeViewController.swift; sourceTree = "<group>"; };
 		7660431A1E7E83FD0059E603 /* YKWeiboMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboMessageViewController.swift; sourceTree = "<group>"; };
 		7660431C1E7E840D0059E603 /* YKWeiboPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboPublishViewController.swift; sourceTree = "<group>"; };
+		7660431E1E7E97670059E603 /* WeiboMainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = WeiboMainVCSettings.json; path = Publish/WeiboMainVCSettings.json; sourceTree = "<group>"; };
 		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
 		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
 		76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestSimpleVC.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				766042521E7E82D20059E603 /* Me */,
 				766042531E7E82D20059E603 /* Message */,
 				766042541E7E82D20059E603 /* Publish */,
+				7660431E1E7E97670059E603 /* WeiboMainVCSettings.json */,
 				766041811E7E7F940059E603 /* YKWeiBoMainViewController.swift */,
 			);
 			path = Weibo;
@@ -1048,6 +1051,7 @@
 				766042F91E7E82D30059E603 /* tabbar_home_highlighted@3x.png in Resources */,
 				766042A61E7E82D30059E603 /* timeline_card_middle_background@2x.png in Resources */,
 				766042711E7E82D20059E603 /* tabbar_compose_background_icon_add@3x.png in Resources */,
+				7660431F1E7E97670059E603 /* WeiboMainVCSettings.json in Resources */,
 				766042AB1E7E82D30059E603 /* timeline_icon_like@3x.png in Resources */,
 				766043111E7E82D30059E603 /* visitordiscover_image_profile@3x.png in Resources */,
 				766042AD1E7E82D30059E603 /* timeline_icon_retweet@3x.png in Resources */,
