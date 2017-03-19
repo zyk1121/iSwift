@@ -46,6 +46,9 @@ class YKWeiboMeViewController: YKWeiboBaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        if !userLogin {
+            visitorView!.setupVisitorInfo(isHome: false, imageName: "visitordiscover_image_profile", message: "1234567")
+        }
         view.setNeedsUpdateConstraints()
     }
     

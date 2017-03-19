@@ -10,6 +10,16 @@ import Foundation
 import UIKit
 
 class YKWYKWeiboVisitView: UIView {
+    
+    func setupVisitorInfo(isHome:Bool,imageName:String,message:String) {
+        rotationImageView.isHidden = !isHome
+        iconImageView.image = UIImage(named: imageName)
+        messageLabel.text = message
+        
+        if isHome {
+            startAnimation()
+        }
+    }
     // MARK: - property
   
     // MARK: - life circle
@@ -22,6 +32,17 @@ class YKWYKWeiboVisitView: UIView {
     // 代码布局就不需要xib和storyboard布局了
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // 动画
+    private func startAnimation()
+    {
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * M_PI
+        anim.duration = 20
+        anim.repeatCount = MAXFLOAT
+        anim.isRemovedOnCompletion = false
+        rotationImageView.layer.add(anim, forKey: nil)
     }
     
     func setupUI() {
@@ -107,5 +128,4 @@ class YKWYKWeiboVisitView: UIView {
             make.height.equalTo(30)
         }
     }
-
 }

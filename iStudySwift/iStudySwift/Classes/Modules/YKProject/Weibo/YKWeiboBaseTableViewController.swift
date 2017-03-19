@@ -11,6 +11,7 @@ import UIKit
 
 class YKWeiboBaseTableViewController: UITableViewController {
     var userLogin = false
+    var visitorView : YKWYKWeiboVisitView?
     override func loadView() {
         userLogin ? super.loadView() : setupVisitView()
     }
@@ -18,7 +19,7 @@ class YKWeiboBaseTableViewController: UITableViewController {
     private func setupVisitView()
     {
         let visitView = YKWYKWeiboVisitView()
-        
+        visitorView = visitView
         view = visitView
     }
 }
