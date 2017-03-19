@@ -10,6 +10,11 @@
   "imageName": "tabbar_message_center"
   },
   {
+  "vcName": "YKWeiboNullViewController",
+  "title": "",
+  "imageName": ""
+  },
+  {
   "vcName": "YKWeiboDiscoverViewController",
   "title": "广场",
   "imageName": "tabbar_discover"

@@ -58,6 +58,15 @@ class YKWeiBoMainViewController: UITabBarController {
 //        addChildViewController("YKWeiboMeViewController",titleName: "我",imageName: "tabbar_profile")
         
         // 通过json创建
+    
+        addViewControllers()
+        
+//        setupUI()
+        view.setNeedsUpdateConstraints()
+    }
+    
+    private func addViewControllers()
+    {
         let path  = Bundle.main.path(forResource: "WeiboMainVCSettings.json", ofType: nil)
         if let jsonPath = path {
             let jsonData = NSData(contentsOfFile: jsonPath)
@@ -74,9 +83,22 @@ class YKWeiBoMainViewController: UITabBarController {
                 addChildViewController("YKWeiboMeViewController",titleName: "我",imageName: "tabbar_profile")
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // 建议在此处设置frame，viewDidLoad中不一定有view以及子views
+        super.viewWillAppear(animated)
         
-//        setupUI()
-        view.setNeedsUpdateConstraints()
+        setupComposeBtn()
+    }
+    
+    private func setupComposeBtn()
+    {
+        // 添加➕按钮
+        tabBar.addSubview(composeBtn)
+        let width = UIScreen.main.bounds.width / CGFloat((viewControllers?.count)!)
+        let rect = CGRect(x: 2*width, y: 0, width: width, height: 49)
+        composeBtn.frame = rect
     }
     
     /// MARK:loadView
@@ -145,7 +167,25 @@ class YKWeiBoMainViewController: UITabBarController {
         super.updateViewConstraints()
     }
     
+    // MARK: - 懒加载
+    private lazy var composeBtn : UIButton = {
+        let btn = UIButton()
+        
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add"), for: UIControlState.normal)
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: UIControlState.highlighted)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: UIControlState.normal)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: UIControlState.highlighted)
+        btn.addTarget(self, action: #selector(YKWeiBoMainViewController.composeBtnClick), for: UIControlEvents.touchUpInside)
+        return btn
+    }()
+    
     // MARK: - event
+    // 监听按钮的方法不能是私有方法
+    func composeBtnClick() {
+        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: kYKWeiboPublishURLString)!,transferType: .YKTransferTypePresent) { (destViewController : UIViewController?, error:NSError?) in
+            
+        }
+    }
     func testBtnClicked()
     {
         // testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked), for: UIControlEvents.touchUpInside)

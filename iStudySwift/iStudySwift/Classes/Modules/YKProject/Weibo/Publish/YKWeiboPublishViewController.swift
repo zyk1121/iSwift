@@ -46,6 +46,7 @@ class YKWeiboPublishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        view.backgroundColor = UIColor.lightGray
         view.setNeedsUpdateConstraints()
     }
     
