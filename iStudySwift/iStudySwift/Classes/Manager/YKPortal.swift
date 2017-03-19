@@ -41,6 +41,10 @@ class YKPortal
         // 添加新数据
         portalClasses.append(YKTestViewController.self)
         portalClasses.append(YKTestTableViewController.self)
+        portalClasses.append(YKSystemUIViewController.self)
+        portalClasses.append(YKNetworkViewController.self)
+        portalClasses.append(YKProjectViewController.self)
+        portalClasses.append(YKThirdPartViewController.self)
     }
     
     /// 注册Portal

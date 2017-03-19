@@ -1,27 +1,26 @@
 //
-//  YKTest.swift
+//  YKProjectViewController.swift
 //  iStudySwift
 //
-//  Created by zhangyuanke on 17/3/16.
+//  Created by zhangyuanke on 17/3/19.
 //  Copyright © 2017年 zhangyuanke. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import SnapKit
-
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
-let kYKTestURLString = "yk://istudydemo/test"
+let kYKProjectURLString = "yk://istudydemo/project"
 
-class YKTestViewController: UIViewController {
+class YKProjectViewController: UIViewController {
     
     // MARK: - Portal 相关
     static func portalLoad()
     {
         YKPortal.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:YKTransferType, sourceViewController:UIViewController) -> UIViewController? in
             
-            if transferURL.hasSameTrunkWithURL(URL: NSURL(string:kYKTestURLString)!) {
-                let viewController = YKTestViewController()
+            if transferURL.hasSameTrunkWithURL(URL: NSURL(string:kYKProjectURLString)!) {
+                let viewController = YKProjectViewController()
                 if transferType.rawValue == 0 {
                     sourceViewController.navigationController?.pushViewController(viewController, animated: true)
                 } else {
@@ -32,15 +31,14 @@ class YKTestViewController: UIViewController {
             } else {
                 return nil
             }
-        }, prefixURL: NSURL(string: kYKTestURLString)!)
+        }, prefixURL: NSURL(string: kYKProjectURLString)!)
     }
-    
     public override class func initialize()
     {
         super.initialize()
         portalLoad()
     }
-   
+    
     // MARK: - 属性
     var testBtn:UIButton?
     

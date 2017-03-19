@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        // 页面Portal跳转不成功，请在该方法中注册类的初始化方法
         YKPortal.registerClasses()
         
         window = UIWindow(frame: UIScreen.main.bounds)

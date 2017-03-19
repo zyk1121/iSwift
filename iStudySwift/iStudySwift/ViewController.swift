@@ -10,8 +10,12 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var items:[[String]] = [["测试","测试2"],
-                            [kYKTestTableViewURLString,kYKTestTableViewURLString]]
+    var items:[String:String] = ["测试":kYKTestTableViewURLString,
+                                 "SystemUI":kYKSystemUIURLString,
+                                 "网络Http":kYKNetworkURLString,
+                                 "Project":kYKProjectURLString,
+                                 "第三方":kYKThirdPartURLString,
+                                 ]
     var tableView:UITableView?
     
     override func viewDidLoad() {
@@ -68,10 +72,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: identify,
                                                  for: indexPath) as UITableViewCell
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        
-        cell.textLabel?.text = self.items[0][indexPath.row]
+        cell.textLabel?.text = findKeyForRow(row: indexPath.row)
         return cell
 
+    }
+    
+    func findKeyForRow(row:Int) -> String {
+        let keys = items.keys
+        
+        for (index, item) in keys.enumerated() {
+            if index == row {
+                return item
+            }
+        }
+        return "defaultkey"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,7 +95,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     /// 选中某一行
     func selectRow(row : Int) {
-        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: self.items[1][row])!,transferType: .YKTransferTypePush) { (destViewController : UIViewController?, error:NSError?) in
+        let key = findKeyForRow(row: row)
+        
+        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: items[key]!)!,transferType: .YKTransferTypePush) { (destViewController : UIViewController?, error:NSError?) in
             
         }
     }
