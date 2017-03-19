@@ -45,7 +45,14 @@ class YKWeiBoMainViewController: UITabBarController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        tabBar.tintColor = UIColor.orange
+        // 添加自子控制器
+        addChildViewController(YKWeiboHomeViewController(),titleName: "首页",imageName: "tabbar_home")
+        addChildViewController(YKWeiboMessageViewController(),titleName: "消息",imageName: "tabbar_message_center")
+        addChildViewController(YKWeiboDiscoverViewController(),titleName: "发现",imageName: "tabbar_discover")
+        addChildViewController(YKWeiboMeViewController(),titleName: "我",imageName: "tabbar_profile")
+        
+//        setupUI()
         view.setNeedsUpdateConstraints()
     }
     
@@ -57,6 +64,18 @@ class YKWeiBoMainViewController: UITabBarController {
     deinit {
         print("必须执行代码deinit才会调用！")
     }
+    
+    private func addChildViewController(_ childController: UIViewController,titleName:String, imageName:String) {
+        
+        childController.tabBarItem.image = UIImage(named: imageName)
+        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
+        childController.title = titleName
+        let navVC = UINavigationController()
+        navVC.addChildViewController(childController)
+        
+        addChildViewController(navVC)
+    }
+    
     
     /// MARK:返回
     override func goBack() {

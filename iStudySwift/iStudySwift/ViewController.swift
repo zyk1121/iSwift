@@ -10,11 +10,17 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var items:[String:String] = ["测试":kYKTestTableViewURLString,
-                                 "SystemUI":kYKSystemUIURLString,
-                                 "网络Http":kYKNetworkURLString,
-                                 "Project":kYKProjectURLString,
-                                 "第三方":kYKThirdPartURLString,
+    var itemKeys = ["01-系统控件",
+                    "02-项目",
+                    "03-第三方",
+                    "04-网络Http",
+                    ]
+    var items:[String:String] = ["01-系统控件":kYKSystemUIURLString,
+                                 "02-项目":kYKProjectURLString,
+                                 "03-第三方":kYKThirdPartURLString,
+                                 "04-网络Http":kYKNetworkURLString,
+                                 
+                                 "99-测试":kYKTestTableViewURLString,
                                  ]
     var tableView:UITableView?
     
@@ -61,7 +67,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return itemKeys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +78,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: identify,
                                                  for: indexPath) as UITableViewCell
         cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-        cell.textLabel?.text = findKeyForRow(row: indexPath.row)
+//        cell.textLabel?.text = findKeyForRow(row: indexPath.row)
+        cell.textLabel?.text = itemKeys[indexPath.row]
         return cell
 
     }
@@ -95,7 +102,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     /// 选中某一行
     func selectRow(row : Int) {
-        let key = findKeyForRow(row: row)
+//        let key = findKeyForRow(row: row)
+        let key = itemKeys[row]
         
         YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: items[key]!)!,transferType: .YKTransferTypePush) { (destViewController : UIViewController?, error:NSError?) in
             
