@@ -101,7 +101,6 @@ class YKPortal
         if completion != nil{
             completion!(destinationViewController, portalError)
         }
-        portalMap.removeValue(forKey: URL.absoluteString!)
     }
     private static func _combineHandlerArraysWithKeys(keys:[String]?)->[YKPortalHandler]?
     {

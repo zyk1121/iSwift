@@ -84,9 +84,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: self.items[1][row])!,transferType: .YKTransferTypePush) { (destViewController : UIViewController?, error:NSError?) in
             
         }
-//        var vc = YKTestViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
-        
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

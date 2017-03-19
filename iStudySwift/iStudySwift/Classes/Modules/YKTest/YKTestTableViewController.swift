@@ -46,7 +46,13 @@ class YKTestTableViewController: YKTableViewController {
     /// MARK:viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red
+        // 重新设置tableView数据
+//        self.tableviewData = [["123","345"],["abc","def"]]
+
+        self.tableviewData = [["123","345"],["abc","def"],["hahaha"]]
+        
+        self.tableviewData = [["123","345"],["abc","def"],["hahaha"]]
+        self.tableSectionHeaderData = ["A","B","C"]
     }
     
     /// MARK:loadView
