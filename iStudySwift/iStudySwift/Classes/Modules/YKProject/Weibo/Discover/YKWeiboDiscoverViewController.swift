@@ -12,7 +12,7 @@ import SnapKit
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
 let kYKWeiboDiscoverURLString = "yk://istudydemo/weibo/discover"
 
-class YKWeiboDiscoverViewController: UITableViewController {
+class YKWeiboDiscoverViewController: YKWeiboBaseTableViewController {
     
     // MARK: - Portal 相关
     static func portalLoad()
@@ -66,7 +66,7 @@ class YKWeiboDiscoverViewController: UITableViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.goBack()
+//        self.goBack()
     }
     
     // MARK:- 自定义view & 布局

@@ -12,7 +12,7 @@ import SnapKit
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
 let kYKWeiboHomeURLString = "yk://istudydemo/weibo/home"
 
-class YKWeiboHomeViewController: UITableViewController {
+class YKWeiboHomeViewController: YKWeiboBaseTableViewController {
     
     // MARK: - Portal 相关
     static func portalLoad()
@@ -66,16 +66,16 @@ class YKWeiboHomeViewController: UITableViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.goBack()
+//        self.goBack()
     }
     
     // MARK:- 自定义view & 布局
     func setupUI() {
-        testBtn = UIButton()
-        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
-        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
-        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
-        view.addSubview(testBtn!)
+//        testBtn = UIButton()
+//        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
+//        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
+//        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
+//        view.addSubview(testBtn!)
     }
     override func updateViewConstraints() {
         

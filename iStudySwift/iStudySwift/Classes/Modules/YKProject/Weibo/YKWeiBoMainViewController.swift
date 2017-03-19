@@ -147,7 +147,7 @@ class YKWeiBoMainViewController: UITabBarController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.goBack()
+//        self.goBack()
     }
     
     // MARK:- 自定义view & 布局

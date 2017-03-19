@@ -215,6 +215,8 @@
 		7660431D1E7E840D0059E603 /* YKWeiboPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660431C1E7E840D0059E603 /* YKWeiboPublishViewController.swift */; };
 		7660431F1E7E97670059E603 /* WeiboMainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 7660431E1E7E97670059E603 /* WeiboMainVCSettings.json */; };
 		766043211E7EB6170059E603 /* YKWeiboNullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043201E7EB6170059E603 /* YKWeiboNullViewController.swift */; };
+		766043231E7EBFF00059E603 /* YKWeiboVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043221E7EBFEF0059E603 /* YKWeiboVisitView.swift */; };
+		766043251E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043241E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift */; };
 		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
 		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
 		76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */; };
@@ -435,6 +437,8 @@
 		7660431C1E7E840D0059E603 /* YKWeiboPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboPublishViewController.swift; sourceTree = "<group>"; };
 		7660431E1E7E97670059E603 /* WeiboMainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = WeiboMainVCSettings.json; path = Publish/WeiboMainVCSettings.json; sourceTree = "<group>"; };
 		766043201E7EB6170059E603 /* YKWeiboNullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboNullViewController.swift; sourceTree = "<group>"; };
+		766043221E7EBFEF0059E603 /* YKWeiboVisitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboVisitView.swift; sourceTree = "<group>"; };
+		766043241E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboBaseTableViewController.swift; sourceTree = "<group>"; };
 		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
 		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
 		76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestSimpleVC.swift; sourceTree = "<group>"; };
@@ -533,6 +537,8 @@
 				766042531E7E82D20059E603 /* Message */,
 				766042541E7E82D20059E603 /* Publish */,
 				766043201E7EB6170059E603 /* YKWeiboNullViewController.swift */,
+				766043221E7EBFEF0059E603 /* YKWeiboVisitView.swift */,
+				766043241E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift */,
 				7660431E1E7E97670059E603 /* WeiboMainVCSettings.json */,
 				766041811E7E7F940059E603 /* YKWeiBoMainViewController.swift */,
 			);
@@ -1268,8 +1274,10 @@
 				766043211E7EB6170059E603 /* YKWeiboNullViewController.swift in Sources */,
 				7660431D1E7E840D0059E603 /* YKWeiboPublishViewController.swift in Sources */,
 				7660417F1E7E6C780059E603 /* YKThirdPartViewController.swift in Sources */,
+				766043251E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift in Sources */,
 				761154C01E782DC1006CE801 /* AppDelegate.swift in Sources */,
 				76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */,
+				766043231E7EBFF00059E603 /* YKWeiboVisitView.swift in Sources */,
 				7660417D1E7E6C0B0059E603 /* YKProjectViewController.swift in Sources */,
 				76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */,
 				76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */,
