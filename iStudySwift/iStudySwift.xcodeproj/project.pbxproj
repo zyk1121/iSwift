@@ -12,7 +12,10 @@
 		761154C71E782DC1006CE801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761154C61E782DC1006CE801 /* Assets.xcassets */; };
 		761154CA1E782DC1006CE801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761154C81E782DC1006CE801 /* LaunchScreen.storyboard */; };
 		761154D51E783E42006CE801 /* YKPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761154D41E783E42006CE801 /* YKPortal.swift */; };
-		76F33ABE1E7AE50D00039737 /* YKTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F33ABD1E7AE50D00039737 /* YKTest.swift */; };
+		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
+		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
+		76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */; };
+		76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F33ABD1E7AE50D00039737 /* YKTestViewController.swift */; };
 		7A4603B191B43C54CD6C967E /* Pods_iStudySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB338967D450D58C14C578C /* Pods_iStudySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -26,7 +29,10 @@
 		761154C91E782DC1006CE801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		761154CB1E782DC1006CE801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761154D41E783E42006CE801 /* YKPortal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKPortal.swift; sourceTree = "<group>"; };
-		76F33ABD1E7AE50D00039737 /* YKTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTest.swift; sourceTree = "<group>"; };
+		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
+		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
+		76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestSimpleVC.swift; sourceTree = "<group>"; };
+		76F33ABD1E7AE50D00039737 /* YKTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestViewController.swift; sourceTree = "<group>"; };
 		8AB338967D450D58C14C578C /* Pods_iStudySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iStudySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +82,7 @@
 		761154D11E782E75006CE801 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				76898F4E1E7E2EFE00780F94 /* Common */,
 				761154D21E782E75006CE801 /* Manager */,
 				761154D31E782E75006CE801 /* Modules */,
 			);
@@ -101,6 +108,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		76898F4E1E7E2EFE00780F94 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		76F33AB91E7AE4F200039737 /* YKNetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +133,9 @@
 		76F33ABB1E7AE4F200039737 /* YKTest */ = {
 			isa = PBXGroup;
 			children = (
-				76F33ABD1E7AE50D00039737 /* YKTest.swift */,
+				76F33ABD1E7AE50D00039737 /* YKTestViewController.swift */,
+				76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */,
+				76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */,
 			);
 			path = YKTest;
 			sourceTree = "<group>";
@@ -273,8 +290,11 @@
 			files = (
 				761154C21E782DC1006CE801 /* ViewController.swift in Sources */,
 				761154D51E783E42006CE801 /* YKPortal.swift in Sources */,
+				76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */,
 				761154C01E782DC1006CE801 /* AppDelegate.swift in Sources */,
-				76F33ABE1E7AE50D00039737 /* YKTest.swift in Sources */,
+				76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */,
+				76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */,
+				76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,10 @@ class YKTestViewController: UIViewController {
         portalLoad()
     }
     
+    deinit {
+        print("必须执行代码deinit才会调用！")
+    }
+    
     /// MARK:viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

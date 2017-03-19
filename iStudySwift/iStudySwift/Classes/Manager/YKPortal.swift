@@ -40,6 +40,7 @@ class YKPortal
         portalMap.removeAll()
         // 添加新数据
         portalClasses.append(YKTestViewController.self)
+        portalClasses.append(YKTestTableViewController.self)
     }
     
     /// 注册Portal
@@ -93,13 +94,14 @@ class YKPortal
         var portalError:NSError?
         if destinationViewController == nil {
             portalError = NSError.init(domain: kYKPortalErrorDomian, code: -1, userInfo: nil)
+        } else {
+            
         }
-        
         
         if completion != nil{
             completion!(destinationViewController, portalError)
         }
-        
+        portalMap.removeValue(forKey: URL.absoluteString!)
     }
     private static func _combineHandlerArraysWithKeys(keys:[String]?)->[YKPortalHandler]?
     {
