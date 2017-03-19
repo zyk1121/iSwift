@@ -42,15 +42,53 @@ class YKWeiboHomeViewController: YKWeiboBaseTableViewController {
     // MARK: - 属性
     var testBtn:UIButton?
     
+    var titleButton:YKWeiBoTitleButton?
+    
+    
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if !userLogin {
             visitorView!.setupVisitorInfo(isHome: true, imageName: "visitordiscover_feed_image_house", message: "1234567")
+        } else {
+            setupNavi()
+            setupTitle()
         }
         setupUI()
         view.setNeedsUpdateConstraints()
+    }
+    
+    // 初始化左右按钮
+    private func setupNavi()
+    {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: #selector(leftBarButtonClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(rightBarButtonClick))
+    }
+    
+    // 初始化标题按钮
+    private func setupTitle()
+    {
+        let tileBtn = YKWeiBoTitleButton()
+        tileBtn.setTitle("abcd ", for: UIControlState.normal)
+        tileBtn.setTitle("abcd ", for: UIControlState.selected)
+        tileBtn.addTarget(self, action: #selector(titleBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
+        titleButton = tileBtn
+        navigationItem.titleView = tileBtn
+    }
+    
+    //
+    func titleBtnClicked(sender:YKWeiBoTitleButton) {
+        sender.isSelected = !sender.isSelected;
+    }
+    
+    func leftBarButtonClick() {
+        print(#function)
+    }
+    
+    func rightBarButtonClick()
+    {
+        print(#function)
     }
     
     /// MARK:loadView

@@ -217,6 +217,10 @@
 		766043211E7EB6170059E603 /* YKWeiboNullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043201E7EB6170059E603 /* YKWeiboNullViewController.swift */; };
 		766043231E7EBFF00059E603 /* YKWeiboVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043221E7EBFEF0059E603 /* YKWeiboVisitView.swift */; };
 		766043251E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043241E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift */; };
+		7660432C1E7ED9970059E603 /* SSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043281E7ED9970059E603 /* SSLog.swift */; };
+		7660432D1E7ED9970059E603 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043291E7ED9970059E603 /* UIBarButtonItem+Extension.swift */; };
+		7660432E1E7ED9970059E603 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660432A1E7ED9970059E603 /* UIButton+Extension.swift */; };
+		7660432F1E7ED9970059E603 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660432B1E7ED9970059E603 /* WBTitleButton.swift */; };
 		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
 		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
 		76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */; };
@@ -439,6 +443,10 @@
 		766043201E7EB6170059E603 /* YKWeiboNullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboNullViewController.swift; sourceTree = "<group>"; };
 		766043221E7EBFEF0059E603 /* YKWeiboVisitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboVisitView.swift; sourceTree = "<group>"; };
 		766043241E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboBaseTableViewController.swift; sourceTree = "<group>"; };
+		766043281E7ED9970059E603 /* SSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLog.swift; sourceTree = "<group>"; };
+		766043291E7ED9970059E603 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		7660432A1E7ED9970059E603 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		7660432B1E7ED9970059E603 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
 		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
 		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
 		76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestSimpleVC.swift; sourceTree = "<group>"; };
@@ -540,6 +548,7 @@
 				766043221E7EBFEF0059E603 /* YKWeiboVisitView.swift */,
 				766043241E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift */,
 				7660431E1E7E97670059E603 /* WeiboMainVCSettings.json */,
+				766043261E7ED9970059E603 /* Utils */,
 				766041811E7E7F940059E603 /* YKWeiBoMainViewController.swift */,
 			);
 			path = Weibo;
@@ -885,6 +894,25 @@
 				7660431C1E7E840D0059E603 /* YKWeiboPublishViewController.swift */,
 			);
 			path = Publish;
+			sourceTree = "<group>";
+		};
+		766043261E7ED9970059E603 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				766043271E7ED9970059E603 /* Log */,
+				766043291E7ED9970059E603 /* UIBarButtonItem+Extension.swift */,
+				7660432A1E7ED9970059E603 /* UIButton+Extension.swift */,
+				7660432B1E7ED9970059E603 /* WBTitleButton.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		766043271E7ED9970059E603 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				766043281E7ED9970059E603 /* SSLog.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 		76898F4E1E7E2EFE00780F94 /* Common */ = {
@@ -1276,12 +1304,16 @@
 				7660417F1E7E6C780059E603 /* YKThirdPartViewController.swift in Sources */,
 				766043251E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift in Sources */,
 				761154C01E782DC1006CE801 /* AppDelegate.swift in Sources */,
+				7660432F1E7ED9970059E603 /* WBTitleButton.swift in Sources */,
 				76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */,
 				766043231E7EBFF00059E603 /* YKWeiboVisitView.swift in Sources */,
 				7660417D1E7E6C0B0059E603 /* YKProjectViewController.swift in Sources */,
+				7660432D1E7ED9970059E603 /* UIBarButtonItem+Extension.swift in Sources */,
+				7660432C1E7ED9970059E603 /* SSLog.swift in Sources */,
 				76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */,
 				76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */,
 				766043151E7E83890059E603 /* YKWeiboHomeViewController.swift in Sources */,
+				7660432E1E7ED9970059E603 /* UIButton+Extension.swift in Sources */,
 				766041791E7E66070059E603 /* YKSystemUIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

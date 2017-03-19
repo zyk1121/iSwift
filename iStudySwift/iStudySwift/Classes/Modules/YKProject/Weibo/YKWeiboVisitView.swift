@@ -9,7 +9,17 @@
 import Foundation
 import UIKit
 
+protocol YKWYKWeiboVisitViewDelegate : NSObjectProtocol {
+    // 登录回调
+    func loginBtnClicked()
+    // 注册回调
+    func registerBtnClicked()
+}
+
 class YKWYKWeiboVisitView: UIView {
+    
+    // 一定要加上weak，避免循环引用
+    weak var delegate : YKWYKWeiboVisitViewDelegate?
     
     func setupVisitorInfo(isHome:Bool,imageName:String,message:String) {
         rotationImageView.isHidden = !isHome
@@ -80,6 +90,7 @@ class YKWYKWeiboVisitView: UIView {
         let tempImage = UIImage(named:"common_button_white_disable")
         let image = tempImage?.resizableImage(withCapInsets: UIEdgeInsetsMake((tempImage?.size.height)! / 2.0,(tempImage?.size.width)! / 2.0, (tempImage?.size.height)! / 2.0, (tempImage?.size.width)! / 2.0))
         btn.setBackgroundImage(image!, for: UIControlState.normal)
+        btn.addTarget(self, action: #selector(YKWYKWeiboVisitView.registerBtnClicked), for: UIControlEvents.touchUpInside)
         return btn
     }()
     private lazy var loginButton: UIButton = {
@@ -89,6 +100,7 @@ class YKWYKWeiboVisitView: UIView {
         let tempImage = UIImage(named:"common_button_white_disable")
         let image = tempImage?.resizableImage(withCapInsets: UIEdgeInsetsMake((tempImage?.size.height)! / 2.0,(tempImage?.size.width)! / 2.0, (tempImage?.size.height)! / 2.0, (tempImage?.size.width)! / 2.0))
         btn.setBackgroundImage(image!, for: UIControlState.normal)
+        btn.addTarget(self, action: #selector(YKWYKWeiboVisitView.loginBtnClicked), for: UIControlEvents.touchUpInside)
         return btn
     }()
     
@@ -127,5 +139,14 @@ class YKWYKWeiboVisitView: UIView {
             make.width.equalTo(100)
             make.height.equalTo(30)
         }
+    }
+
+    // event
+    func loginBtnClicked() {
+        delegate?.loginBtnClicked()
+    }
+    
+    func registerBtnClicked() {
+        delegate?.registerBtnClicked()
     }
 }

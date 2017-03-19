@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 页面Portal跳转不成功，请在该方法中注册类的初始化方法
         YKPortal.registerClasses()
         
+        // 设置导航栏和工具栏的 外观 全局有效
+        UINavigationBar.appearance().tintColor = UIColor.orange
+        UITabBar.appearance().tintColor = UIColor.orange
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let naviController : UINavigationController = UINavigationController(rootViewController: ViewController())
