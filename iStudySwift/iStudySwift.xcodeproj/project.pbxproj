@@ -16,6 +16,7 @@
 		7660417B1E7E6B890059E603 /* YKNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660417A1E7E6B890059E603 /* YKNetworkViewController.swift */; };
 		7660417D1E7E6C0B0059E603 /* YKProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660417C1E7E6C0B0059E603 /* YKProjectViewController.swift */; };
 		7660417F1E7E6C780059E603 /* YKThirdPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660417E1E7E6C780059E603 /* YKThirdPartViewController.swift */; };
+		766041821E7E7F940059E603 /* YKWeiBoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766041811E7E7F940059E603 /* YKWeiBoMainViewController.swift */; };
 		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
 		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
 		76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */; };
@@ -37,6 +38,7 @@
 		7660417A1E7E6B890059E603 /* YKNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKNetworkViewController.swift; sourceTree = "<group>"; };
 		7660417C1E7E6C0B0059E603 /* YKProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKProjectViewController.swift; sourceTree = "<group>"; };
 		7660417E1E7E6C780059E603 /* YKThirdPartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKThirdPartViewController.swift; sourceTree = "<group>"; };
+		766041811E7E7F940059E603 /* YKWeiBoMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiBoMainViewController.swift; sourceTree = "<group>"; };
 		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
 		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
 		76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestSimpleVC.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			path = YKSystemUI;
 			sourceTree = "<group>";
 		};
+		766041801E7E7F790059E603 /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				766041811E7E7F940059E603 /* YKWeiBoMainViewController.swift */,
+			);
+			path = Weibo;
+			sourceTree = "<group>";
+		};
 		76898F4E1E7E2EFE00780F94 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 		76F33ABA1E7AE4F200039737 /* YKProject */ = {
 			isa = PBXGroup;
 			children = (
+				766041801E7E7F790059E603 /* Weibo */,
 				7660417C1E7E6C0B0059E603 /* YKProjectViewController.swift */,
 			);
 			path = YKProject;
@@ -312,6 +323,7 @@
 				761154C21E782DC1006CE801 /* ViewController.swift in Sources */,
 				761154D51E783E42006CE801 /* YKPortal.swift in Sources */,
 				76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */,
+				766041821E7E7F940059E603 /* YKWeiBoMainViewController.swift in Sources */,
 				7660417F1E7E6C780059E603 /* YKThirdPartViewController.swift in Sources */,
 				761154C01E782DC1006CE801 /* AppDelegate.swift in Sources */,
 				76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */,
@@ -432,6 +444,7 @@
 			baseConfigurationReference = 585DC240C87D20BD7D847EF7 /* Pods-iStudySwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7Q62N6S7X8;
 				INFOPLIST_FILE = iStudySwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -448,6 +461,7 @@
 			baseConfigurationReference = 5ABC48DECDFC9B5B244BE35A /* Pods-iStudySwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7Q62N6S7X8;
 				INFOPLIST_FILE = iStudySwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

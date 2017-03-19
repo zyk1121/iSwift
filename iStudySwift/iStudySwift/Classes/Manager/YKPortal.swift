@@ -45,6 +45,8 @@ class YKPortal
         portalClasses.append(YKNetworkViewController.self)
         portalClasses.append(YKProjectViewController.self)
         portalClasses.append(YKThirdPartViewController.self)
+        // 微博
+        portalClasses.append(YKWeiBoMainViewController.self)
     }
     
     /// 注册Portal
