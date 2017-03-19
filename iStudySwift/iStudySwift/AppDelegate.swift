@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+// https://github.com/github/gitignore git忽略文件添加
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
