@@ -100,12 +100,20 @@
 		761154D31E782E75006CE801 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				766041771E7E59490059E603 /* YKSystemUI */,
 				76F33AB91E7AE4F200039737 /* YKNetwork */,
 				76F33ABA1E7AE4F200039737 /* YKProject */,
 				76F33ABB1E7AE4F200039737 /* YKTest */,
 				76F33ABC1E7AE4F200039737 /* YKThirdPart */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		766041771E7E59490059E603 /* YKSystemUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YKSystemUI;
 			sourceTree = "<group>";
 		};
 		76898F4E1E7E2EFE00780F94 /* Common */ = {

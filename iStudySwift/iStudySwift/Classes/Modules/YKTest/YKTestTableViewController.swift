@@ -43,13 +43,13 @@ class YKTestTableViewController: YKTableViewController {
         print("必须执行代码deinit才会调用！")
     }
     
-    /// MARK:viewDidLoad
+    // MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         // 重新设置tableView数据
 //        self.tableviewData = [["123","345"],["abc","def"]]
 
-        self.tableviewData = [["123","345"],["abc","def"],["hahaha"]]
+//        self.tableviewData = [["123","345"],["abc","def"],["hahaha"]]
         
         self.tableviewData = [["123","345"],["abc","def"],["hahaha"]]
         self.tableSectionHeaderData = ["A","B","C"]
@@ -69,5 +69,10 @@ class YKTestTableViewController: YKTableViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.goBack()
+    }
+    
+    // 选中cell方法回调
+    override func selectRowAt(indexPath: IndexPath) {
+        print(indexPath)
     }
 }

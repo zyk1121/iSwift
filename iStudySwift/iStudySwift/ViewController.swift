@@ -10,8 +10,8 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var items:[[String]] = [["测试1","测试2"],
-                            [kYKTestURLString,kYKTestTableViewURLString]]
+    var items:[[String]] = [["测试","测试2"],
+                            [kYKTestTableViewURLString,kYKTestTableViewURLString]]
     var tableView:UITableView?
     
     override func viewDidLoad() {

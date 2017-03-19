@@ -36,6 +36,7 @@ class YKTestViewController: UIViewController {
     /// MARK:initialize
     public override class func initialize()
     {
+        super.initialize()
         portalLoad()
     }
     
