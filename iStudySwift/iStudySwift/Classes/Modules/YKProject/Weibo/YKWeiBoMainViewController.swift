@@ -12,7 +12,7 @@ import SnapKit
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
 let kYKWeiBoMainURLString = "yk://istudydemo/weibo/main"
 
-class YKWeiBoMainViewController: UIViewController {
+class YKWeiBoMainViewController: UITabBarController {
     
     // MARK: - Portal 相关
     static func portalLoad()

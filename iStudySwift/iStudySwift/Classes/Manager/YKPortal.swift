@@ -39,14 +39,23 @@ class YKPortal
         portalClasses.removeAll()
         portalMap.removeAll()
         // 添加新数据
+        // 测试
         portalClasses.append(YKTestViewController.self)
         portalClasses.append(YKTestTableViewController.self)
+        // 主图项目
         portalClasses.append(YKSystemUIViewController.self)
         portalClasses.append(YKNetworkViewController.self)
         portalClasses.append(YKProjectViewController.self)
         portalClasses.append(YKThirdPartViewController.self)
         // 微博
         portalClasses.append(YKWeiBoMainViewController.self)
+        portalClasses.append(YKWeiboMeViewController.self)
+        portalClasses.append(YKWeiboDiscoverViewController.self)
+        portalClasses.append(YKWeiboHomeViewController.self)
+        portalClasses.append(YKWeiboMessageViewController.self)
+        portalClasses.append(YKWeiboPublishViewController.self)
+        
+        
     }
     
     /// 注册Portal

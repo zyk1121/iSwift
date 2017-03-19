@@ -1,5 +1,5 @@
 //
-//  YKProjectViewController.swift
+//  YKWeiboPublishViewController.swift
 //  iStudySwift
 //
 //  Created by zhangyuanke on 17/3/19.
@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 import SnapKit
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
-let kYKProjectURLString = "yk://istudydemo/project"
+let kYKWeiboPublishURLString = "yk://istudydemo/weibo/publish"
 
-class YKProjectViewController: YKTableViewController {
+class YKWeiboPublishViewController: UIViewController {
     
     // MARK: - Portal 相关
     static func portalLoad()
     {
         YKPortal.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:YKTransferType, sourceViewController:UIViewController) -> UIViewController? in
             
-            if transferURL.hasSameTrunkWithURL(URL: NSURL(string:kYKProjectURLString)!) {
-                let viewController = YKProjectViewController()
+            if transferURL.hasSameTrunkWithURL(URL: NSURL(string:kYKWeiboPublishURLString)!) {
+                let viewController = YKWeiboPublishViewController()
                 if transferType.rawValue == 0 {
                     sourceViewController.navigationController?.pushViewController(viewController, animated: true)
                 } else {
@@ -31,7 +31,7 @@ class YKProjectViewController: YKTableViewController {
             } else {
                 return nil
             }
-        }, prefixURL: NSURL(string: kYKProjectURLString)!)
+        }, prefixURL: NSURL(string: kYKWeiboPublishURLString)!)
     }
     public override class func initialize()
     {
@@ -46,7 +46,6 @@ class YKProjectViewController: YKTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        self.tableviewData = [["新浪微博"]]
         view.setNeedsUpdateConstraints()
     }
     
@@ -72,23 +71,22 @@ class YKProjectViewController: YKTableViewController {
     
     // MARK:- 自定义view & 布局
     func setupUI() {
-//        testBtn = UIButton()
-//        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
-//        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
-//        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
-//        view.addSubview(testBtn!)
+        testBtn = UIButton()
+        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
+        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
+        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
+        view.addSubview(testBtn!)
     }
     override func updateViewConstraints() {
         
-//        testBtn?.snp_remakeConstraints(closure: { (maker) in
-//            _ = maker.center.equalTo(view)
-//        })
+        testBtn?.snp_remakeConstraints(closure: { (maker) in
+            _ = maker.center.equalTo(view)
+        })
         // Call [super updateViewConstraints] as the final step in your implementation.
         super.updateViewConstraints()
     }
     
     // MARK: - event
-    /*
     func testBtnClicked()
     {
         // testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked), for: UIControlEvents.touchUpInside)
@@ -97,24 +95,5 @@ class YKProjectViewController: YKTableViewController {
     
     func testBtnClicked(sender:UIButton) {
         print("testBtnClicked(sender:)")
-    }
- */
-    
-    override func selectRowAt(indexPath: IndexPath) {
-        var portalURL:String?
-        var transferType:YKTransferType = .YKTransferTypePush
-        
-        switch indexPath.row {
-        case 0:
-            portalURL = kYKWeiBoMainURLString
-            transferType = .YKTransferTypePresent
-        default:
-            portalURL = nil
-        }
-        if portalURL != nil {
-            YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: portalURL!)!,transferType: transferType) { (destViewController : UIViewController?, error:NSError?) in
-                
-            }
-        }
     }
 }
