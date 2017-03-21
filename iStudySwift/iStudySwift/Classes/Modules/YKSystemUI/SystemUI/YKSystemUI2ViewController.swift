@@ -1,27 +1,26 @@
 //
-//  YKSystemUIViewController.swift
+//  YKSystemUI2ViewController.swift
 //  iStudySwift
 //
-//  Created by zhangyuanke on 17/3/19.
+//  Created by zhangyuanke on 17/3/21.
 //  Copyright © 2017年 zhangyuanke. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import SnapKit
-
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
-let kYKSystemUIURLString = "yk://istudydemo/systemui"
+let kYKSystemUI2URLString = "yk://istudydemo/systemui/simple2"
 
-class YKSystemUIViewController: YKTableViewController {
+class YKSystemUI2ViewController: UIViewController {
     
     // MARK: - Portal 相关
     static func portalLoad()
     {
         YKPortal.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:YKTransferType, sourceViewController:UIViewController) -> UIViewController? in
             
-            if transferURL.hasSameTrunkWithURL(URL: NSURL(string:kYKSystemUIURLString)!) {
-                let viewController = YKSystemUIViewController()
+            if transferURL.hasSameTrunkWithURL(URL: NSURL(string:kYKSystemUI2URLString)!) {
+                let viewController = YKSystemUI2ViewController()
                 if transferType.rawValue == 0 {
                     sourceViewController.navigationController?.pushViewController(viewController, animated: true)
                 } else {
@@ -32,7 +31,7 @@ class YKSystemUIViewController: YKTableViewController {
             } else {
                 return nil
             }
-        }, prefixURL: NSURL(string: kYKSystemUIURLString)!)
+        }, prefixURL: NSURL(string: kYKSystemUI2URLString)!)
     }
     public override class func initialize()
     {
@@ -46,26 +45,8 @@ class YKSystemUIViewController: YKTableViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
         setupUI()
         view.setNeedsUpdateConstraints()
-    }
-    
-    private func setupData()
-    {
-        tableviewData = [["简单控件1",
-                          "简单控件2",
-                          "自定义控件"]]
-    }
-    
-    /// 选中某一行(可以重写)
-    override func selectRowAt(indexPath: IndexPath) {
-        // 建议重写
-        let urlStrs = [kYKSystemUI1URLString,
-                       kYKSystemUI2URLString,
-                       kYKSystemUI1URLString]
-        
-        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: urlStrs[indexPath.row])!, transferType: .YKTransferTypePush, completion: nil)
     }
     
     /// MARK:loadView
@@ -90,17 +71,17 @@ class YKSystemUIViewController: YKTableViewController {
     
     // MARK:- 自定义view & 布局
     func setupUI() {
-//        testBtn = UIButton()
-//        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
-//        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
-//        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
-//        view.addSubview(testBtn!)
+        testBtn = UIButton()
+        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
+        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
+        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
+        view.addSubview(testBtn!)
     }
     override func updateViewConstraints() {
         
-//        testBtn?.snp_remakeConstraints(closure: { (maker) in
-//            _ = maker.center.equalTo(view)
-//        })
+        testBtn?.snp_remakeConstraints(closure: { (maker) in
+            _ = maker.center.equalTo(view)
+        })
         // Call [super updateViewConstraints] as the final step in your implementation.
         super.updateViewConstraints()
     }

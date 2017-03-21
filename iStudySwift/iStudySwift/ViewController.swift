@@ -10,12 +10,12 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var itemKeys = ["01-系统控件",
+    var itemKeys = ["01-控件",
                     "02-项目",
                     "03-第三方",
                     "04-网络Http",
                     ]
-    var items:[String:String] = ["01-系统控件":kYKSystemUIURLString,
+    var items:[String:String] = ["01-控件":kYKSystemUIURLString,
                                  "02-项目":kYKProjectURLString,
                                  "03-第三方":kYKThirdPartURLString,
                                  "04-网络Http":kYKNetworkURLString,

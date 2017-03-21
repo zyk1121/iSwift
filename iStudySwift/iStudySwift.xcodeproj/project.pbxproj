@@ -224,6 +224,8 @@
 		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
 		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
 		76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */; };
+		76D783311E816D2C00405067 /* YKSystemUI1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D783301E816D2C00405067 /* YKSystemUI1ViewController.swift */; };
+		76D783331E816DAA00405067 /* YKSystemUI2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D783321E816DAA00405067 /* YKSystemUI2ViewController.swift */; };
 		76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F33ABD1E7AE50D00039737 /* YKTestViewController.swift */; };
 		7A4603B191B43C54CD6C967E /* Pods_iStudySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB338967D450D58C14C578C /* Pods_iStudySwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -450,6 +452,8 @@
 		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
 		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
 		76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestSimpleVC.swift; sourceTree = "<group>"; };
+		76D783301E816D2C00405067 /* YKSystemUI1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKSystemUI1ViewController.swift; sourceTree = "<group>"; };
+		76D783321E816DAA00405067 /* YKSystemUI2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKSystemUI2ViewController.swift; sourceTree = "<group>"; };
 		76F33ABD1E7AE50D00039737 /* YKTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestViewController.swift; sourceTree = "<group>"; };
 		8AB338967D450D58C14C578C /* Pods_iStudySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iStudySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -530,6 +534,7 @@
 		766041771E7E59490059E603 /* YKSystemUI */ = {
 			isa = PBXGroup;
 			children = (
+				76D7832D1E816B6C00405067 /* SystemUI */,
 				766041781E7E66070059E603 /* YKSystemUIViewController.swift */,
 			);
 			path = YKSystemUI;
@@ -923,6 +928,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		76D7832D1E816B6C00405067 /* SystemUI */ = {
+			isa = PBXGroup;
+			children = (
+				76D783301E816D2C00405067 /* YKSystemUI1ViewController.swift */,
+				76D783321E816DAA00405067 /* YKSystemUI2ViewController.swift */,
+			);
+			path = SystemUI;
+			sourceTree = "<group>";
+		};
 		76F33AB91E7AE4F200039737 /* YKNetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,6 +1317,7 @@
 				7660431D1E7E840D0059E603 /* YKWeiboPublishViewController.swift in Sources */,
 				7660417F1E7E6C780059E603 /* YKThirdPartViewController.swift in Sources */,
 				766043251E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift in Sources */,
+				76D783331E816DAA00405067 /* YKSystemUI2ViewController.swift in Sources */,
 				761154C01E782DC1006CE801 /* AppDelegate.swift in Sources */,
 				7660432F1E7ED9970059E603 /* WBTitleButton.swift in Sources */,
 				76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */,
@@ -1310,6 +1325,7 @@
 				7660417D1E7E6C0B0059E603 /* YKProjectViewController.swift in Sources */,
 				7660432D1E7ED9970059E603 /* UIBarButtonItem+Extension.swift in Sources */,
 				7660432C1E7ED9970059E603 /* SSLog.swift in Sources */,
+				76D783311E816D2C00405067 /* YKSystemUI1ViewController.swift in Sources */,
 				76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */,
 				76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */,
 				766043151E7E83890059E603 /* YKWeiboHomeViewController.swift in Sources */,
