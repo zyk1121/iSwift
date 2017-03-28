@@ -57,6 +57,7 @@ class YKPortal
         portalClasses.append(YKWeiboHomeViewController.self)
         portalClasses.append(YKWeiboMessageViewController.self)
         portalClasses.append(YKWeiboPublishViewController.self)
+        portalClasses.append(YKQRCodeViewController.self)
         
         
     }

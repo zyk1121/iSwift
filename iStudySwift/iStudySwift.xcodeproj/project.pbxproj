@@ -12,6 +12,7 @@
 		761154C71E782DC1006CE801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761154C61E782DC1006CE801 /* Assets.xcassets */; };
 		761154CA1E782DC1006CE801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761154C81E782DC1006CE801 /* LaunchScreen.storyboard */; };
 		761154D51E783E42006CE801 /* YKPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761154D41E783E42006CE801 /* YKPortal.swift */; };
+		761C21F81E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */; };
 		766041791E7E66070059E603 /* YKSystemUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766041781E7E66070059E603 /* YKSystemUIViewController.swift */; };
 		7660417B1E7E6B890059E603 /* YKNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660417A1E7E6B890059E603 /* YKNetworkViewController.swift */; };
 		7660417D1E7E6C0B0059E603 /* YKProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660417C1E7E6C0B0059E603 /* YKProjectViewController.swift */; };
@@ -240,6 +241,7 @@
 		761154C91E782DC1006CE801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		761154CB1E782DC1006CE801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761154D41E783E42006CE801 /* YKPortal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKPortal.swift; sourceTree = "<group>"; };
+		761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboQRCodeViewController.swift; sourceTree = "<group>"; };
 		766041781E7E66070059E603 /* YKSystemUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKSystemUIViewController.swift; sourceTree = "<group>"; };
 		7660417A1E7E6B890059E603 /* YKNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKNetworkViewController.swift; sourceTree = "<group>"; };
 		7660417C1E7E6C0B0059E603 /* YKProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKProjectViewController.swift; sourceTree = "<group>"; };
@@ -531,6 +533,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		761C21F61E8A945300E58F56 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
 		766041771E7E59490059E603 /* YKSystemUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +580,7 @@
 		766041841E7E82D20059E603 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				761C21F61E8A945300E58F56 /* QRCode */,
 				766043141E7E83890059E603 /* YKWeiboHomeViewController.swift */,
 			);
 			path = Home;
@@ -1307,6 +1318,7 @@
 			files = (
 				7660417B1E7E6B890059E603 /* YKNetworkViewController.swift in Sources */,
 				766043191E7E83EB0059E603 /* YKWeiboMeViewController.swift in Sources */,
+				761C21F81E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift in Sources */,
 				761154C21E782DC1006CE801 /* ViewController.swift in Sources */,
 				766043171E7E83D90059E603 /* YKWeiboDiscoverViewController.swift in Sources */,
 				761154D51E783E42006CE801 /* YKPortal.swift in Sources */,

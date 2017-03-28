@@ -83,12 +83,15 @@ class YKWeiboHomeViewController: YKWeiboBaseTableViewController {
     }
     
     func leftBarButtonClick() {
-        print(#function)
+//        print(#function)
     }
     
     func rightBarButtonClick()
     {
-        print(#function)
+//        print(#function)
+        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: kYKQRCodeURLString)!,transferType: .YKTransferTypePresent) { (destViewController : UIViewController?, error:NSError?) in
+            
+        }
     }
     
     /// MARK:loadView
