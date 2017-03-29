@@ -95,6 +95,7 @@ class YKWeiBoMainViewController: UITabBarController {
     private func setupComposeBtn()
     {
         // 添加➕按钮
+        composeBtn.removeFromSuperview()
         tabBar.addSubview(composeBtn)
         let width = UIScreen.main.bounds.width / CGFloat((viewControllers?.count)!)
         let rect = CGRect(x: 2*width, y: 0, width: width, height: 49)
@@ -104,6 +105,12 @@ class YKWeiBoMainViewController: UITabBarController {
     /// MARK:loadView
     override func loadView() {
         super.loadView()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+//        composeBtn.removeFromSuperview()
+        setupComposeBtn()
     }
     
     deinit {

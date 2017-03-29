@@ -10,12 +10,18 @@ import Foundation
 import UIKit
 import SnapKit
 
+//// 二维码类型
+//enum QRCodeType {
+//    case QRCode// 二维码
+//    case BarCode// 条形码
+//}
+
 class YKQRCodeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = UIColor.red
-        setupUI()
+        clipsToBounds = true
+        backgroundColor = UIColor.clear
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -31,6 +37,16 @@ class YKQRCodeView: UIView {
         
         //
         startAnimation()
+    }
+    
+    override var frame: CGRect {
+        set {
+            super.frame = newValue
+            setupUI()
+        }
+        get {
+            return super.frame
+        }
     }
     
     // 懒加载
@@ -52,8 +68,10 @@ class YKQRCodeView: UIView {
     }
     
     func startAnimation() {
+        self.scanLineIcon.layer.removeAllAnimations()
         UIView.animate(withDuration: 1.5, delay: 0, options: [.repeat], animations: {
             self.scanLineIcon.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+//            print("1234")// 执行一次
         }, completion: nil)
     }
     

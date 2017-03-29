@@ -217,7 +217,23 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
     
     // MARK:-- tabBar delegate
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print(#function)
+//        print(#function)
+        if item === self.tabBar.items?[0]  {
+//            print("===")
+            qrCodeView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+            qrCodeView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y : UIScreen.main.bounds.height/2)
+            qrCodeView.scanLineIcon.image = UIImage(named: "qrcode_scanline_qrcode")
+        } else {
+            qrCodeView.frame = CGRect(x: 0, y: 0, width: 200, height: 60)
+            qrCodeView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y : UIScreen.main.bounds.height/2)
+            qrCodeView.scanLineIcon.image = UIImage(named: "qrcode_scanline_barcode")
+        }
+    }
+    
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+     qrCodeView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y : UIScreen.main.bounds.height/2)   
     }
     
     override func updateViewConstraints() {
