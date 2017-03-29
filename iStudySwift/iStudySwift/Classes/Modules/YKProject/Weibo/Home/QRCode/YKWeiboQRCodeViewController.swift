@@ -183,8 +183,18 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
          
          */
         view.addSubview(tabBar)
+        view.addSubview(qrCodeView)
     }
     
+    
+    // 
+    lazy var qrCodeView : YKQRCodeView = {
+        let view = YKQRCodeView(frame:CGRect(x: 0, y: 0, width: 200, height: 200))
+        view.center = CGPoint(x: UIScreen.main.bounds.width / 2, y : UIScreen.main.bounds.height/2)
+        return view
+    }()
+    
+    // tabbar
     lazy var tabBar : UITabBar = {
         let tabbar = UITabBar()
         tabbar.barTintColor = UIColor.black
@@ -221,6 +231,12 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
             _ = make.left.right.equalTo(view)
             _ = make.height.equalTo(49)
         }
+        
+//        qrCodeView.snp_updateConstraints { (make) in
+//            _ = make.center.equalTo(view)
+//            _ = make.width.height.equalTo(200)
+//        }
+        
         // Call [super updateViewConstraints] as the final step in your implementation.
         super.updateViewConstraints()
     }
