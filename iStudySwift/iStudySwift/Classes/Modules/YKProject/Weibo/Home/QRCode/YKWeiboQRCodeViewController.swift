@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 import SnapKit
+import AVFoundation
+
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
 let kYKQRCodeURLString = "yk://istudydemo/weibo/home/qrcode"
 
-class YKQRCodeViewController: UIViewController,UITabBarDelegate {
+class YKQRCodeViewController: UIViewController,UITabBarDelegate,AVCaptureMetadataOutputObjectsDelegate {
     
     // MARK: - Portal 相关
     static func portalLoad()
@@ -52,6 +54,10 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
         super.viewWillAppear(animated)
         
         setupUI()
+        
+        scanQRcode()
+        
+        
         view.setNeedsUpdateConstraints()
     }
     
@@ -233,7 +239,7 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-     qrCodeView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y : UIScreen.main.bounds.height/2)   
+     qrCodeView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y : UIScreen.main.bounds.height/2)
     }
     
     override func updateViewConstraints() {
@@ -279,5 +285,90 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
     {
         print(#function)
         print("相册")
+    }
+    
+    
+    // 
+    var session : AVCaptureSession?
+    var layer: AVCaptureVideoPreviewLayer?;
+    
+    func scanQRcode()
+    {
+        self.session = AVCaptureSession();
+        
+        ////
+        let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo);
+        do
+        {
+            let input = try AVCaptureDeviceInput(device: device);
+            
+            if (self.session!.canAddInput(input))
+            {
+                self.session!.addInput(input);
+            }
+            
+            ////输出
+            let output = AVCaptureMetadataOutput();
+
+            output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main);
+            
+            if (self.session!.canAddOutput(output))
+            {
+                self.session!.addOutput(output)
+                output.metadataObjectTypes = [AVMetadataObjectTypeQRCode];
+            }
+            
+            ////添加图层
+            self.layer = AVCaptureVideoPreviewLayer(session:self.session!);
+            self.layer?.frame = self.view.frame;
+            self.view.layer.insertSublayer(self.layer!, at: 0);
+            
+            //// 开始扫描
+            self.session?.startRunning();
+        }
+        catch let error as NSError
+        {
+            print(error);
+        }
+    }
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        let stringValue:String?;
+        
+        if (metadataObjects.count > 0)
+        {
+            let metadataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject;
+            
+            ////
+            stringValue = metadataObject.stringValue;
+            if (nil != stringValue) ////这里捕捉到二维码
+            {
+                self.session!.stopRunning();
+                //// 移除图层
+                self.layer!.removeFromSuperlayer();
+                
+                ////启动拨号～～
+                print("\(stringValue)")
+                goBack()
+//                UIApplication.shared.openURL(NSURL(string: "tel://\(stringValue)")! as URL);
+                
+                
+                //                let alertView = UIAlertController(title: "二维码", message: stringValue, preferredStyle: .Alert);
+                //                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+                //                alertView.addAction(action);
+                
+                ////显示提示框
+                //                self.presentViewController(alertView, animated: true, completion:nil);
+            }
+            else
+            {
+                let alertView = UIAlertController(title: "二维码", message: "没有扫描到二维码", preferredStyle: .alert);
+                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil);
+                alertView.addAction(action);
+                
+                ////显示提示框
+                self.present(alertView, animated: true, completion:nil);
+            }
+        }
     }
 }

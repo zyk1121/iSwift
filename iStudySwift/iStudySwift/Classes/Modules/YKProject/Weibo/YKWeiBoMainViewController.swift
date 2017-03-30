@@ -109,7 +109,7 @@ class YKWeiBoMainViewController: UITabBarController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-//        composeBtn.removeFromSuperview()
+//        composeBtn.removeFromSuperview()
         setupComposeBtn()
     }
     
