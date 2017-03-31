@@ -96,6 +96,9 @@ class YKTestViewController: UIViewController {
     }
     
     func testBtnClicked(sender:UIButton) {
-        print("testBtnClicked(sender:)")
+//        print("testBtnClicked(sender:)")
+//        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: kYKQRCodeCardURLString)!,transferType: .YKTransferTypePush) { (destViewController : UIViewController?, error:NSError?) in
+//            
+//        }
     }
 }

@@ -14,6 +14,7 @@
 		761154D51E783E42006CE801 /* YKPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761154D41E783E42006CE801 /* YKPortal.swift */; };
 		761C21F81E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */; };
 		761C21FA1E8AA92400E58F56 /* YKQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C21F91E8AA92400E58F56 /* YKQRCodeView.swift */; };
+		765B93601E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B935F1E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift */; };
 		766041791E7E66070059E603 /* YKSystemUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766041781E7E66070059E603 /* YKSystemUIViewController.swift */; };
 		7660417B1E7E6B890059E603 /* YKNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660417A1E7E6B890059E603 /* YKNetworkViewController.swift */; };
 		7660417D1E7E6C0B0059E603 /* YKProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660417C1E7E6C0B0059E603 /* YKProjectViewController.swift */; };
@@ -225,6 +226,7 @@
 		761154D41E783E42006CE801 /* YKPortal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKPortal.swift; sourceTree = "<group>"; };
 		761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboQRCodeViewController.swift; sourceTree = "<group>"; };
 		761C21F91E8AA92400E58F56 /* YKQRCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKQRCodeView.swift; sourceTree = "<group>"; };
+		765B935F1E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboQRCodeCardViewController.swift; sourceTree = "<group>"; };
 		766041781E7E66070059E603 /* YKSystemUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKSystemUIViewController.swift; sourceTree = "<group>"; };
 		7660417A1E7E6B890059E603 /* YKNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKNetworkViewController.swift; sourceTree = "<group>"; };
 		7660417C1E7E6C0B0059E603 /* YKProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKProjectViewController.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 			children = (
 				761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */,
 				761C21F91E8AA92400E58F56 /* YKQRCodeView.swift */,
+				765B935F1E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -1262,6 +1265,7 @@
 				76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */,
 				766043151E7E83890059E603 /* YKWeiboHomeViewController.swift in Sources */,
 				7660432E1E7ED9970059E603 /* UIButton+Extension.swift in Sources */,
+				765B93601E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift in Sources */,
 				766041791E7E66070059E603 /* YKSystemUIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

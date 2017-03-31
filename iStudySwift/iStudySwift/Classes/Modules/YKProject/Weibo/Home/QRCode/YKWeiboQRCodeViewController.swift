@@ -48,17 +48,25 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+         setupUI()
+        scanQRcode()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupUI()
+       
         
-        scanQRcode()
+//        scanQRcode()
         
         
         view.setNeedsUpdateConstraints()
+        self.session?.startRunning()
+    
+//        tabBar.selectedItem = tabBar.items?[0]
+        tabBar(tabBar, didSelect: (tabBar.items?[0])!)
+         self.navigationController?.navigationBar.barTintColor = UIColor.black
+       
     }
     
     /// MARK:loadView
@@ -136,11 +144,11 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: #selector(leftBarButtonClick))
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(rightBarButtonClick))
         
-//        testBtn = UIButton()
-//        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
-//        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
-//        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
-//        view.addSubview(testBtn!)
+        testBtn = UIButton()
+        testBtn?.setTitle("我的卡片", for: UIControlState.normal)
+        testBtn?.setTitleColor(UIColor.orange, for: UIControlState.normal)
+        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
+        view.addSubview(testBtn!)
         
         // 添加tabbar
         /*
@@ -242,17 +250,28 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
      qrCodeView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y : UIScreen.main.bounds.height/2)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.session?.stopRunning()
+    }
+    
+    
+    
     override func updateViewConstraints() {
         
-//        testBtn?.snp_remakeConstraints(closure: { (maker) in
-//            _ = maker.center.equalTo(view)
-//        })
+       
         
         tabBar.snp_updateConstraints { (make) in
             _ = make.bottom.equalTo(view)
             _ = make.left.right.equalTo(view)
             _ = make.height.equalTo(49)
         }
+        
+        
+        testBtn?.snp_remakeConstraints(closure: { (maker) in
+            _ = maker.bottom.equalTo(tabBar.snp_top).offset(-30)
+            _ = maker.centerX.equalTo(view)
+        })
         
 //        qrCodeView.snp_updateConstraints { (make) in
 //            _ = make.center.equalTo(view)
@@ -272,8 +291,11 @@ class YKQRCodeViewController: UIViewController,UITabBarDelegate {
     }
     
     func testBtnClicked(sender:UIButton) {
-        print(#function)
+//        print(#function)
 //        print("testBtnClicked(sender:)")
+        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: kYKQRCodeCardURLString)!,transferType: .YKTransferTypePush) { (destViewController : UIViewController?, error:NSError?) in
+            
+        }
     }
     
     func leftBarButtonClick() {
