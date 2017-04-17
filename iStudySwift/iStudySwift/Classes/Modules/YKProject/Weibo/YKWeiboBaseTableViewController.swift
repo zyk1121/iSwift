@@ -33,8 +33,11 @@ class YKWeiboBaseTableViewController: UITableViewController,YKWYKWeiboVisitViewD
     // 登录回调
     func loginBtnClicked()
     {
-        print("登录")
-        print(#function)
+//        print("登录")
+//        print(#function)
+        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: kYKYKOAuthURLString)!,transferType: .YKTransferTypePresent) { (destViewController : UIViewController?, error:NSError?) in
+            
+        }
     }
     // 注册回调
     func registerBtnClicked()

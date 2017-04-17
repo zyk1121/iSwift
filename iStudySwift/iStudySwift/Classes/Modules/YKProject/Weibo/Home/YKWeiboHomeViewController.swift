@@ -92,6 +92,8 @@ class YKWeiboHomeViewController: YKWeiboBaseTableViewController {
         YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: kYKQRCodeURLString)!,transferType: .YKTransferTypePresent) { (destViewController : UIViewController?, error:NSError?) in
             
         }
+//        print(YKSingleInstance.sharedYKSingleInstance())
+//        print(YKSingleInstance.sharedYKSingleInstance())
     }
     
     /// MARK:loadView

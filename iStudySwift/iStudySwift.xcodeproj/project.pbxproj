@@ -12,6 +12,7 @@
 		761154C71E782DC1006CE801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 761154C61E782DC1006CE801 /* Assets.xcassets */; };
 		761154CA1E782DC1006CE801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761154C81E782DC1006CE801 /* LaunchScreen.storyboard */; };
 		761154D51E783E42006CE801 /* YKPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761154D41E783E42006CE801 /* YKPortal.swift */; };
+		7617FE261E9A3E2900627072 /* YKOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7617FE251E9A3E2900627072 /* YKOAuthViewController.swift */; };
 		761C21F81E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */; };
 		761C21FA1E8AA92400E58F56 /* YKQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761C21F91E8AA92400E58F56 /* YKQRCodeView.swift */; };
 		765B93601E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765B935F1E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift */; };
@@ -205,9 +206,13 @@
 		7660432D1E7ED9970059E603 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043291E7ED9970059E603 /* UIBarButtonItem+Extension.swift */; };
 		7660432E1E7ED9970059E603 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660432A1E7ED9970059E603 /* UIButton+Extension.swift */; };
 		7660432F1E7ED9970059E603 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660432B1E7ED9970059E603 /* WBTitleButton.swift */; };
+		766D89911EA5076900FB094E /* YKMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D89901EA5076900FB094E /* YKMediaViewController.swift */; };
 		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
 		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
 		76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */; };
+		768A9C661E95331A009487F8 /* YKSingleInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768A9C651E95331A009487F8 /* YKSingleInstance.swift */; };
+		76B5BEE81EA50AA200D8DF67 /* YKVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5BEE71EA50AA200D8DF67 /* YKVideoViewController.swift */; };
+		76B5BEEA1EA50CA800D8DF67 /* YKVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B5BEE91EA50CA800D8DF67 /* YKVideoPlayerViewController.swift */; };
 		76D783311E816D2C00405067 /* YKSystemUI1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D783301E816D2C00405067 /* YKSystemUI1ViewController.swift */; };
 		76D783331E816DAA00405067 /* YKSystemUI2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D783321E816DAA00405067 /* YKSystemUI2ViewController.swift */; };
 		76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F33ABD1E7AE50D00039737 /* YKTestViewController.swift */; };
@@ -224,6 +229,7 @@
 		761154C91E782DC1006CE801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		761154CB1E782DC1006CE801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		761154D41E783E42006CE801 /* YKPortal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKPortal.swift; sourceTree = "<group>"; };
+		7617FE251E9A3E2900627072 /* YKOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKOAuthViewController.swift; sourceTree = "<group>"; };
 		761C21F71E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboQRCodeViewController.swift; sourceTree = "<group>"; };
 		761C21F91E8AA92400E58F56 /* YKQRCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKQRCodeView.swift; sourceTree = "<group>"; };
 		765B935F1E8EA40B00FA447F /* YKWeiboQRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKWeiboQRCodeCardViewController.swift; sourceTree = "<group>"; };
@@ -417,9 +423,13 @@
 		766043291E7ED9970059E603 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		7660432A1E7ED9970059E603 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7660432B1E7ED9970059E603 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		766D89901EA5076900FB094E /* YKMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKMediaViewController.swift; sourceTree = "<group>"; };
 		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
 		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
 		76898F531E7E3E3D00780F94 /* YKTestSimpleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestSimpleVC.swift; sourceTree = "<group>"; };
+		768A9C651E95331A009487F8 /* YKSingleInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKSingleInstance.swift; sourceTree = "<group>"; };
+		76B5BEE71EA50AA200D8DF67 /* YKVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKVideoViewController.swift; sourceTree = "<group>"; };
+		76B5BEE91EA50CA800D8DF67 /* YKVideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKVideoPlayerViewController.swift; sourceTree = "<group>"; };
 		76D783301E816D2C00405067 /* YKSystemUI1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKSystemUI1ViewController.swift; sourceTree = "<group>"; };
 		76D783321E816DAA00405067 /* YKSystemUI2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKSystemUI2ViewController.swift; sourceTree = "<group>"; };
 		76F33ABD1E7AE50D00039737 /* YKTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +500,7 @@
 		761154D31E782E75006CE801 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				766D898C1EA5067000FB094E /* YKMedia */,
 				766041771E7E59490059E603 /* YKSystemUI */,
 				76F33AB91E7AE4F200039737 /* YKNetwork */,
 				76F33ABA1E7AE4F200039737 /* YKProject */,
@@ -497,6 +508,14 @@
 				76F33ABC1E7AE4F200039737 /* YKThirdPart */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		7617FE241E9A3DCE00627072 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				7617FE251E9A3E2900627072 /* YKOAuthViewController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		761C21F61E8A945300E58F56 /* QRCode */ = {
@@ -521,6 +540,7 @@
 		766041801E7E7F790059E603 /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				7617FE241E9A3DCE00627072 /* OAuth */,
 				766041831E7E82D20059E603 /* Discover */,
 				766041841E7E82D20059E603 /* Home */,
 				766041851E7E82D20059E603 /* Images */,
@@ -548,6 +568,7 @@
 		766041841E7E82D20059E603 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				768A9C641E953308009487F8 /* SingleInstance */,
 				761C21F61E8A945300E58F56 /* QRCode */,
 				766043141E7E83890059E603 /* YKWeiboHomeViewController.swift */,
 			);
@@ -872,12 +893,54 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		766D898C1EA5067000FB094E /* YKMedia */ = {
+			isa = PBXGroup;
+			children = (
+				766D898D1EA5067000FB094E /* YKAudio */,
+				766D898E1EA5067000FB094E /* YKPhoto */,
+				766D898F1EA5067000FB094E /* YKVideo */,
+				766D89901EA5076900FB094E /* YKMediaViewController.swift */,
+			);
+			path = YKMedia;
+			sourceTree = "<group>";
+		};
+		766D898D1EA5067000FB094E /* YKAudio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YKAudio;
+			sourceTree = "<group>";
+		};
+		766D898E1EA5067000FB094E /* YKPhoto */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YKPhoto;
+			sourceTree = "<group>";
+		};
+		766D898F1EA5067000FB094E /* YKVideo */ = {
+			isa = PBXGroup;
+			children = (
+				76B5BEE71EA50AA200D8DF67 /* YKVideoViewController.swift */,
+				76B5BEE91EA50CA800D8DF67 /* YKVideoPlayerViewController.swift */,
+			);
+			path = YKVideo;
+			sourceTree = "<group>";
+		};
 		76898F4E1E7E2EFE00780F94 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		768A9C641E953308009487F8 /* SingleInstance */ = {
+			isa = PBXGroup;
+			children = (
+				768A9C651E95331A009487F8 /* YKSingleInstance.swift */,
+			);
+			path = SingleInstance;
 			sourceTree = "<group>";
 		};
 		76D7832D1E816B6C00405067 /* SystemUI */ = {
@@ -1239,6 +1302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7660417B1E7E6B890059E603 /* YKNetworkViewController.swift in Sources */,
+				76B5BEEA1EA50CA800D8DF67 /* YKVideoPlayerViewController.swift in Sources */,
+				7617FE261E9A3E2900627072 /* YKOAuthViewController.swift in Sources */,
 				766043191E7E83EB0059E603 /* YKWeiboMeViewController.swift in Sources */,
 				761C21F81E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift in Sources */,
 				761154C21E782DC1006CE801 /* ViewController.swift in Sources */,
@@ -1250,17 +1315,20 @@
 				7660431B1E7E83FD0059E603 /* YKWeiboMessageViewController.swift in Sources */,
 				766043211E7EB6170059E603 /* YKWeiboNullViewController.swift in Sources */,
 				7660431D1E7E840D0059E603 /* YKWeiboPublishViewController.swift in Sources */,
+				768A9C661E95331A009487F8 /* YKSingleInstance.swift in Sources */,
 				7660417F1E7E6C780059E603 /* YKThirdPartViewController.swift in Sources */,
 				766043251E7EC08D0059E603 /* YKWeiboBaseTableViewController.swift in Sources */,
 				76D783331E816DAA00405067 /* YKSystemUI2ViewController.swift in Sources */,
 				761154C01E782DC1006CE801 /* AppDelegate.swift in Sources */,
 				7660432F1E7ED9970059E603 /* WBTitleButton.swift in Sources */,
+				76B5BEE81EA50AA200D8DF67 /* YKVideoViewController.swift in Sources */,
 				76F33ABE1E7AE50D00039737 /* YKTestViewController.swift in Sources */,
 				766043231E7EBFF00059E603 /* YKWeiboVisitView.swift in Sources */,
 				7660417D1E7E6C0B0059E603 /* YKProjectViewController.swift in Sources */,
 				7660432D1E7ED9970059E603 /* UIBarButtonItem+Extension.swift in Sources */,
 				7660432C1E7ED9970059E603 /* SSLog.swift in Sources */,
 				76D783311E816D2C00405067 /* YKSystemUI1ViewController.swift in Sources */,
+				766D89911EA5076900FB094E /* YKMediaViewController.swift in Sources */,
 				76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */,
 				76898F541E7E3E3D00780F94 /* YKTestSimpleVC.swift in Sources */,
 				766043151E7E83890059E603 /* YKWeiboHomeViewController.swift in Sources */,

@@ -59,6 +59,12 @@ class YKPortal
         portalClasses.append(YKWeiboPublishViewController.self)
         portalClasses.append(YKQRCodeViewController.self)
         portalClasses.append(YKQRCodeCardViewController.self)
+        portalClasses.append(YKYKOAuthViewController.self)
+        // 多媒体
+        portalClasses.append(YKMediaViewController.self)
+        portalClasses.append(YKVideoViewController.self)
+        portalClasses.append(YKVideoPlayerViewController.self)
+        //
         
     }
     

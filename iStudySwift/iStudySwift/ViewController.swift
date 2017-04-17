@@ -14,11 +14,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     "02-项目",
                     "03-第三方",
                     "04-网络Http",
+                    "05-多媒体",
                     ]
     var items:[String:String] = ["01-控件":kYKSystemUIURLString,
                                  "02-项目":kYKProjectURLString,
                                  "03-第三方":kYKThirdPartURLString,
                                  "04-网络Http":kYKNetworkURLString,
+                                 "05-多媒体":kYKMediaURLString,
                                  
                                  "99-测试":kYKTestTableViewURLString,
                                  ]
