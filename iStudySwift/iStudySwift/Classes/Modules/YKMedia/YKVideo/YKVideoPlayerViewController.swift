@@ -44,11 +44,16 @@ class YKVideoPlayerViewController: UIViewController {
     
     // MARK: - 属性
     var testBtn:UIButton?
+    var totalTime = 0.0
     var filePath:String? {
         didSet {
 //            print(filePath!)
             self.view.layer.addSublayer(self.playerLayer!)
             self.playerLayer?.player?.play()
+            
+            // 
+            self.playerLayer?.player?.currentItem?.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil)
+            self.playerLayer?.player?.currentItem?.addObserver(self, forKeyPath: "loadedTimeRanges", options: NSKeyValueObservingOptions.new, context: nil)
         }
     }
     
@@ -94,8 +99,75 @@ class YKVideoPlayerViewController: UIViewController {
          在這兩個例子中所表達在影片中的時間都皆為2秒鐘,
          但是影隔播放速率則不同, 相差了有兩倍.
          */
-        self.playerLayer?.player?.seek(to: CMTimeMake(0, 30));
-        self.playerLayer?.player?.play();
+        let tm = CMTime(seconds: Double(sender.value) * self.totalTime, preferredTimescale: 30)
+        self.playerLayer?.player?.seek(to: tm)
+        self.playerLayer?.player?.play()
+    }
+    
+    // http://www.cnblogs.com/mzds/p/3711867.html
+    
+    func availableDuration()->TimeInterval {
+        let duration = self.playerLayer?.player?.currentItem?.duration;
+        let loadedTimeRanges = self.playerLayer?.player?.currentItem?.loadedTimeRanges
+        self.playerLayer?.player?.currentTime()
+        let timeRange = loadedTimeRanges?.first?.timeRangeValue
+        let startSeconds = CMTimeGetSeconds((timeRange?.start)!)
+        let durationSeconds = CMTimeGetSeconds((timeRange?.duration)!)
+        let result = startSeconds + durationSeconds
+        return result;
+    }
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        let playerItem = object as! AVPlayerItem
+//        print(keyPath)
+        
+        if keyPath == "status"
+        {
+            if playerItem.status == AVPlayerItemStatus.readyToPlay {
+                self.totalTime = availableDuration()
+                createTime()
+            }
+        }
+//        if ([keyPath isEqualToString:@"status"]) {
+//            if ([playerItem status] == AVPlayerStatusReadyToPlay) {
+//                NSLog(@"AVPlayerStatusReadyToPlay");
+//                self.stateButton.enabled = YES;
+//                CMTime duration = self.playerItem.duration;// 获取视频总长度
+//                CGFloat totalSecond = playerItem.duration.value / playerItem.duration.timescale;// 转换成秒
+//                _totalTime = [self convertTime:totalSecond];// 转换成播放时间
+//                [self customVideoSlider:duration];// 自定义UISlider外观
+//                NSLog(@"movie total duration:%f",CMTimeGetSeconds(duration));
+//                [self monitoringPlayback:self.playerItem];// 监听播放状态
+//            } else if ([playerItem status] == AVPlayerStatusFailed) {
+//                NSLog(@"AVPlayerStatusFailed");
+//            }
+//        } else if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
+//            NSTimeInterval timeInterval = [self availableDuration];// 计算缓冲进度
+//            NSLog(@"Time Interval:%f",timeInterval);
+//            CMTime duration = self.playerItem.duration;
+//            CGFloat totalDuration = CMTimeGetSeconds(duration);
+//            [self.videoProgress setProgress:timeInterval / totalDuration animated:YES];
+//        }
+    }
+    
+    var timer : DispatchSourceTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.main)
+    private func createTime()
+    {
+         timer.scheduleRepeating(deadline: .now(), interval: .seconds(1) ,leeway:.milliseconds(40))
+        timer.setEventHandler {
+        
+            //该处设定要执行的事件，比如说要定时器控制的界面的刷新等等，记住，要用主线程刷新，不然会有延迟
+            let tm = self.playerLayer?.player?.currentTime()
+            let se = CMTimeGetSeconds(tm!)
+            self.slideBar.setValue(Float(se / self.totalTime), animated: true)
+        }
+        
+        if #available(iOS 10.0, *) {
+            timer.activate()
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -110,7 +182,9 @@ class YKVideoPlayerViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        timer.cancel()
+        self.playerLayer?.player?.currentItem?.removeObserver(self, forKeyPath: "status")
+        self.playerLayer?.player?.currentItem?.removeObserver(self, forKeyPath: "loadedTimeRanges")
         if self.playerLayer != nil {
             self.playerLayer?.removeFromSuperlayer()
             self.playerLayer?.player = nil
@@ -121,6 +195,7 @@ class YKVideoPlayerViewController: UIViewController {
     lazy var playerLayer:AVPlayerLayer? = {
         let url = NSURL(fileURLWithPath: self.filePath!)
         let item = AVPlayerItem(url: url as URL)
+        
         let player = AVPlayer(playerItem: item)
         let status = player.status
         //初始化播放
