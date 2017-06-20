@@ -8,4 +8,5 @@ xcodeproj 'iStudySwift/iStudySwift.xcodeproj'
 
 target "iStudySwift" do
   pod 'SnapKit', '~> 0.19.1'
+  pod 'YYText', '~> 1.0.7'
 end

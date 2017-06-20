@@ -206,6 +206,7 @@
 		7660432D1E7ED9970059E603 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766043291E7ED9970059E603 /* UIBarButtonItem+Extension.swift */; };
 		7660432E1E7ED9970059E603 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660432A1E7ED9970059E603 /* UIButton+Extension.swift */; };
 		7660432F1E7ED9970059E603 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660432B1E7ED9970059E603 /* WBTitleButton.swift */; };
+		766677671EF9730500A84505 /* YKYYTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766677661EF9730500A84505 /* YKYYTextViewController.swift */; };
 		766D89911EA5076900FB094E /* YKMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D89901EA5076900FB094E /* YKMediaViewController.swift */; };
 		76898F501E7E2F1500780F94 /* YKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */; };
 		76898F521E7E2FC000780F94 /* YKTestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */; };
@@ -423,6 +424,7 @@
 		766043291E7ED9970059E603 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		7660432A1E7ED9970059E603 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		7660432B1E7ED9970059E603 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		766677661EF9730500A84505 /* YKYYTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKYYTextViewController.swift; sourceTree = "<group>"; };
 		766D89901EA5076900FB094E /* YKMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKMediaViewController.swift; sourceTree = "<group>"; };
 		76898F4F1E7E2F1500780F94 /* YKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTableViewController.swift; sourceTree = "<group>"; };
 		76898F511E7E2FC000780F94 /* YKTestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKTestTableViewController.swift; sourceTree = "<group>"; };
@@ -893,6 +895,14 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		766677651EF9726400A84505 /* YKText */ = {
+			isa = PBXGroup;
+			children = (
+				766677661EF9730500A84505 /* YKYYTextViewController.swift */,
+			);
+			path = YKText;
+			sourceTree = "<group>";
+		};
 		766D898C1EA5067000FB094E /* YKMedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -982,6 +992,7 @@
 		76F33ABC1E7AE4F200039737 /* YKThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				766677651EF9726400A84505 /* YKText */,
 				7660417E1E7E6C780059E603 /* YKThirdPartViewController.swift */,
 			);
 			path = YKThirdPart;
@@ -1011,12 +1022,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 761154CE1E782DC1006CE801 /* Build configuration list for PBXNativeTarget "iStudySwift" */;
 			buildPhases = (
-				BBCC228737FD185438CD1DF3 /* Check Pods Manifest.lock */,
+				BBCC228737FD185438CD1DF3 /* [CP] Check Pods Manifest.lock */,
 				761154B81E782DC1006CE801 /* Sources */,
 				761154B91E782DC1006CE801 /* Frameworks */,
 				761154BA1E782DC1006CE801 /* Resources */,
-				31D065E7DB4A891663DC028B /* Embed Pods Frameworks */,
-				0D6E79384B206747E811BF2E /* Copy Pods Resources */,
+				31D065E7DB4A891663DC028B /* [CP] Embed Pods Frameworks */,
+				0D6E79384B206747E811BF2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1039,7 +1050,7 @@
 				TargetAttributes = {
 					761154BB1E782DC1006CE801 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7Q62N6S7X8;
+						DevelopmentTeam = XNE48U2JDU;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -1249,14 +1260,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D6E79384B206747E811BF2E /* Copy Pods Resources */ = {
+		0D6E79384B206747E811BF2E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1264,14 +1275,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31D065E7DB4A891663DC028B /* Embed Pods Frameworks */ = {
+		31D065E7DB4A891663DC028B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1279,19 +1290,19 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iStudySwift/Pods-iStudySwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BBCC228737FD185438CD1DF3 /* Check Pods Manifest.lock */ = {
+		BBCC228737FD185438CD1DF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1305,6 +1316,7 @@
 				76B5BEEA1EA50CA800D8DF67 /* YKVideoPlayerViewController.swift in Sources */,
 				7617FE261E9A3E2900627072 /* YKOAuthViewController.swift in Sources */,
 				766043191E7E83EB0059E603 /* YKWeiboMeViewController.swift in Sources */,
+				766677671EF9730500A84505 /* YKYYTextViewController.swift in Sources */,
 				761C21F81E8A946B00E58F56 /* YKWeiboQRCodeViewController.swift in Sources */,
 				761154C21E782DC1006CE801 /* ViewController.swift in Sources */,
 				766043171E7E83D90059E603 /* YKWeiboDiscoverViewController.swift in Sources */,
@@ -1449,7 +1461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DEVELOPMENT_TEAM = XNE48U2JDU;
 				INFOPLIST_FILE = iStudySwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1466,7 +1478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DEVELOPMENT_TEAM = XNE48U2JDU;
 				INFOPLIST_FILE = iStudySwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

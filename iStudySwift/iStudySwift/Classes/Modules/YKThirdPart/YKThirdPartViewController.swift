@@ -12,7 +12,7 @@ import SnapKit
 // 注意，页面Portal跳转不成功，请在YKPortal方法中注册类的初始化方法
 let kYKThirdPartURLString = "yk://istudydemo/thirdpart"
 
-class YKThirdPartViewController: UIViewController {
+class YKThirdPartViewController: YKTableViewController {
     
     // MARK: - Portal 相关
     static func portalLoad()
@@ -45,8 +45,25 @@ class YKThirdPartViewController: UIViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupData()
         view.setNeedsUpdateConstraints()
+    }
+    
+    private func setupData()
+    {
+        tableviewData = [["YKText",
+                          "123",
+                          "456"]]
+    }
+    
+    /// 选中某一行(可以重写)
+    override func selectRowAt(indexPath: IndexPath) {
+        // 建议重写
+        let urlStrs = [kYKYYTextURLString,
+                       kYKYYTextURLString,
+                       kYKYYTextURLString]
+        
+        YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: urlStrs[indexPath.row])!, transferType: .YKTransferTypePush, completion: nil)
     }
     
     /// MARK:loadView
@@ -62,38 +79,5 @@ class YKThirdPartViewController: UIViewController {
     override func goBack() {
         // todo
         super.goBack()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        self.goBack()
-    }
-    
-    // MARK:- 自定义view & 布局
-    func setupUI() {
-        testBtn = UIButton()
-        testBtn?.setTitle("测试按钮", for: UIControlState.normal)
-        testBtn?.setTitleColor(UIColor.red, for: UIControlState.normal)
-        testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked(sender:)), for: UIControlEvents.touchUpInside)
-        view.addSubview(testBtn!)
-    }
-    override func updateViewConstraints() {
-        
-        testBtn?.snp_remakeConstraints(closure: { (maker) in
-            _ = maker.center.equalTo(view)
-        })
-        // Call [super updateViewConstraints] as the final step in your implementation.
-        super.updateViewConstraints()
-    }
-    
-    // MARK: - event
-    func testBtnClicked()
-    {
-        // testBtn?.addTarget(self, action: #selector(YKTestViewController.testBtnClicked), for: UIControlEvents.touchUpInside)
-        print("testBtnClicked")
-    }
-    
-    func testBtnClicked(sender:UIButton) {
-        print("testBtnClicked(sender:)")
     }
 }

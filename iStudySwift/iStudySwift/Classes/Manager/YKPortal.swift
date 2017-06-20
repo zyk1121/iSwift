@@ -64,8 +64,12 @@ class YKPortal
         portalClasses.append(YKMediaViewController.self)
         portalClasses.append(YKVideoViewController.self)
         portalClasses.append(YKVideoPlayerViewController.self)
-        //
         
+        // 第三方
+        portalClasses.append(YKYYTextViewController.self)
+//        portalClasses.append(YKYYTextViewController.self)
+//        portalClasses.append(YKYYTextViewController.self)
+        //
     }
     
     /// 注册Portal
