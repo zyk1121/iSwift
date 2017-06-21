@@ -51,17 +51,17 @@ class YKThirdPartViewController: YKTableViewController {
     
     private func setupData()
     {
-        tableviewData = [["YKText",
-                          "123",
-                          "456"]]
+        tableviewData = [["YYText",
+                          "FMDB",
+                          "POP"]]
     }
     
     /// 选中某一行(可以重写)
     override func selectRowAt(indexPath: IndexPath) {
         // 建议重写
         let urlStrs = [kYKYYTextURLString,
-                       kYKYYTextURLString,
-                       kYKYYTextURLString]
+                       kYKFMDBURLString,
+                       kYKPOPURLString]
         
         YKPortal.transferFromViewController(sourceViewController: self, toURL: NSURL(string: urlStrs[indexPath.row])!, transferType: .YKTransferTypePush, completion: nil)
     }

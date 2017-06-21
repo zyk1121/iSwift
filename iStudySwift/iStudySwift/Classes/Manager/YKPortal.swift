@@ -40,6 +40,7 @@ class YKPortal
         portalMap.removeAll()
         // 添加新数据
         // 测试
+//        YKTestViewController.portalLoad()
         portalClasses.append(YKTestViewController.self)
         portalClasses.append(YKTestTableViewController.self)
         // 主图项目
@@ -67,8 +68,9 @@ class YKPortal
         
         // 第三方
         portalClasses.append(YKYYTextViewController.self)
-//        portalClasses.append(YKYYTextViewController.self)
-//        portalClasses.append(YKYYTextViewController.self)
+        portalClasses.append(YKFFDBViewController.self)
+//        portalClasses.append(YKPOPViewController.self)
+        YKPOPViewController.portalLoad()
         //
     }
     

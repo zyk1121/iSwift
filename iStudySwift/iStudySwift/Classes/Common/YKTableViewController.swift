@@ -27,6 +27,12 @@ class YKTableViewController : UITableViewController
                                  forCellReuseIdentifier: kYKSwiftCellDefault)
     }
     
+    public override class func initialize()
+    {
+        super.initialize()
+//        print(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
