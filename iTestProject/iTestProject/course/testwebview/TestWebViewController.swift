@@ -13,7 +13,7 @@ class TestWebViewController: SDJGBaseViewController {
     
     open override class func registerRouterVC(_ urlStr:String)
     {
-        SDJGUrlRouterManager.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceViewController:UIViewController) -> UIViewController? in
+        SDJGUrlRouterManager.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceViewController:UIViewController, userInfo:[String:AnyObject]?) -> UIViewController? in
             
             if transferURL.hasSameTrunkWithURL(URL: NSURL(string:urlStr)!) {
                 let viewController = TestWebViewController(url: transferURL)

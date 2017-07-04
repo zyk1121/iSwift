@@ -16,7 +16,7 @@ class SDJGBaseViewController: UIViewController {
         
 //        let urlStr = "sdjg://main"
         
-        SDJGUrlRouterManager.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceViewController:UIViewController) -> UIViewController? in
+        SDJGUrlRouterManager.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceViewController:UIViewController, userInfo:[String:AnyObject]?) -> UIViewController? in
             
             if transferURL.hasSameTrunkWithURL(URL: NSURL(string:urlStr)!) {
                 let viewController = self.init()

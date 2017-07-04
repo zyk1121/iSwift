@@ -28,7 +28,8 @@ public protocol SDJGRegisterRoutersProtocol {
 public typealias SDJGPortalHandler =
     (_ URL:NSURL,
     _ transferType:SDJGTransfromType,
-    _ sourceViewController:UIViewController) -> UIViewController?
+    _ sourceViewController:UIViewController,
+    _ userInfo:[String:AnyObject]?) -> UIViewController?
 public typealias SDJGRegisterModuleHandler = ()->()
 
 /// MARK:Router统一的页面跳转方式
@@ -83,7 +84,7 @@ public class SDJGUrlRouterManager
     ///   - URL: URL
     ///   - transferType: 页面弹出类型
     ///   - completion: 完成回调
-    public static func transferFromViewController(sourceViewController:UIViewController, toURL URL:NSURL, transferType:SDJGTransfromType,completion:((_ viewController:UIViewController?,_ error:NSError?)->Void)?)
+    public static func transferFromViewController(sourceViewController:UIViewController, toURL URL:NSURL, transferType:SDJGTransfromType = .push,userInfo:[String:AnyObject]? = nil,completion:((_ viewController:UIViewController?,_ error:NSError?)->Void)? = nil)
     {
         var keysPool:[[String]] = [[String]]()
         let hostKey = keyFromURL(URL: URL)
@@ -100,7 +101,7 @@ public class SDJGUrlRouterManager
         var destinationViewController:UIViewController?
         for itemArray in keysPool {
             let handlers = self._combineHandlerArraysWithKeys(keys: itemArray)
-            destinationViewController = self.batchPerformHandlers(handlers: handlers!, withURL: URL, transferType: transferType, withSourceViewController: sourceViewController)
+            destinationViewController = self.batchPerformHandlers(handlers: handlers!, withURL: URL, transferType: transferType, withSourceViewController: sourceViewController,userInfo: userInfo)
             if destinationViewController != nil {
                 break
             }
@@ -131,7 +132,7 @@ public class SDJGUrlRouterManager
         return tempArray
     }
     
-    private static func batchPerformHandlers(handlers:[SDJGPortalHandler],withURL URL:NSURL,transferType:SDJGTransfromType,withSourceViewController sourceVC:UIViewController)->UIViewController?
+    private static func batchPerformHandlers(handlers:[SDJGPortalHandler],withURL URL:NSURL,transferType:SDJGTransfromType,withSourceViewController sourceVC:UIViewController,userInfo:[String:AnyObject]?)->UIViewController?
     {
         if handlers.count == 0 {
             return nil
@@ -139,7 +140,7 @@ public class SDJGUrlRouterManager
         var viewController:UIViewController?
         
         for item in handlers {
-            viewController = item(URL, transferType, sourceVC)
+            viewController = item(URL, transferType, sourceVC,userInfo)
             if viewController != nil {
                 break
             }
