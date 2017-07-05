@@ -14,14 +14,14 @@ class SDJGQuestionLibViewController: SDJGBaseViewController {
 
     open override class func registerRouterVC(_ urlStr:String)
     {
-        SDJGUrlRouterManager.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceViewController:UIViewController, userInfo:[String:AnyObject]?) -> UIViewController? in
+        SDJGUrlRouterManager.registerRouterWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceVC:UIViewController, userInfo:[String:AnyObject]?) -> UIViewController? in
             
             if transferURL.hasSameTrunkWithURL(URL: NSURL(string:urlStr)!) {
                 let viewController = SDJGQuestionLibViewController()
                 if transferType.rawValue == 0 {
-                    sourceViewController.navigationController?.pushViewController(viewController, animated: true)
+                    sourceVC.navigationController?.pushViewController(viewController, animated: true)
                 } else {
-                    sourceViewController.present(viewController, animated: true, completion: nil)
+                    sourceVC.present(viewController, animated: true, completion: nil)
                 }
                 
                 return viewController

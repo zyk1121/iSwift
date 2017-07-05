@@ -23,6 +23,7 @@
 		76D12E031F0BAAB80069465E /* SDJGBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D12E021F0BAAB80069465E /* SDJGBaseViewController.swift */; };
 		76D12E061F0BCBE60069465E /* TestNoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D12E051F0BCBE60069465E /* TestNoneViewController.swift */; };
 		76D12E091F0BCEC90069465E /* TestWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D12E081F0BCEC90069465E /* TestWebViewController.swift */; };
+		76F231471F0C85B7009D5E62 /* TestABCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F231461F0C85B7009D5E62 /* TestABCViewController.swift */; };
 		CD2D6F428ACBA2324AE2C4D1 /* Pods_iTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083A261443EB0D1A72EC3B1B /* Pods_iTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		76D12E021F0BAAB80069465E /* SDJGBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDJGBaseViewController.swift; sourceTree = "<group>"; };
 		76D12E051F0BCBE60069465E /* TestNoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNoneViewController.swift; sourceTree = "<group>"; };
 		76D12E081F0BCEC90069465E /* TestWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWebViewController.swift; sourceTree = "<group>"; };
+		76F231461F0C85B7009D5E62 /* TestABCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestABCViewController.swift; sourceTree = "<group>"; };
 		C6B059B59BFFFCA322DA1E6D /* Pods-iTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTestProject/Pods-iTestProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			children = (
 				76D12DF21F0B91A50069465E /* SDJGUrlRouterManager.swift */,
 				76D12E021F0BAAB80069465E /* SDJGBaseViewController.swift */,
+				76D12E041F0BCBD40069465E /* testnone */,
 				76D12DF61F0B9F300069465E /* course */,
 				76D12DF81F0B9F300069465E /* questionlib */,
 				762E22181F07A6120016D097 /* AppDelegate.swift */,
@@ -168,9 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				76D12E071F0BCEAD0069465E /* testwebview */,
-				76D12E041F0BCBD40069465E /* testnone */,
 				76D12DF71F0B9F300069465E /* SDJGCourseRouter.swift */,
 				76D12DFE1F0BA7460069465E /* SDJGCourseViewController.swift */,
+				76F231461F0C85B7009D5E62 /* TestABCViewController.swift */,
 			);
 			path = course;
 			sourceTree = "<group>";
@@ -189,8 +192,7 @@
 			children = (
 				76D12E051F0BCBE60069465E /* TestNoneViewController.swift */,
 			);
-			name = testnone;
-			path = ../testnone;
+			path = testnone;
 			sourceTree = "<group>";
 		};
 		76D12E071F0BCEAD0069465E /* testwebview */ = {
@@ -404,6 +406,7 @@
 				76D12DFF1F0BA7460069465E /* SDJGCourseViewController.swift in Sources */,
 				76D12DF31F0B91A50069465E /* SDJGUrlRouterManager.swift in Sources */,
 				76D12E091F0BCEC90069465E /* TestWebViewController.swift in Sources */,
+				76F231471F0C85B7009D5E62 /* TestABCViewController.swift in Sources */,
 				76D12DFB1F0B9F430069465E /* SDJGQuestionLibRouter.swift in Sources */,
 				76D12E061F0BCBE60069465E /* TestNoneViewController.swift in Sources */,
 				762E22191F07A6120016D097 /* AppDelegate.swift in Sources */,

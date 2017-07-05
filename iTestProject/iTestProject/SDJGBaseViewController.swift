@@ -9,36 +9,6 @@
 import UIKit
 
 class SDJGBaseViewController: UIViewController {
-
-    open class func registerRouterVC(_ urlStr:String)
-    {
-        print(self)
-        
-//        let urlStr = "sdjg://main"
-        
-        SDJGUrlRouterManager.registerPortalWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceViewController:UIViewController, userInfo:[String:AnyObject]?) -> UIViewController? in
-            
-            if transferURL.hasSameTrunkWithURL(URL: NSURL(string:urlStr)!) {
-                let viewController = self.init()
-                if transferType.rawValue == 0 {
-                    sourceViewController.navigationController?.pushViewController(viewController, animated: true)
-                } else if transferType.rawValue == 1{
-                    sourceViewController.present(viewController, animated: true, completion: nil)
-                } else {
-                    // none
-                    print("none transfer")
-                }
-                viewController.setUserTransferInfo(userInfo: nil)
-                return viewController
-            } else {
-                return nil
-            }
-        }, prefixURL: NSURL(string: urlStr)!)
-    }
-    
-    open func setUserTransferInfo(userInfo:[String:Any]?) {
-        print(userInfo ?? "")
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,4 +18,28 @@ class SDJGBaseViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         goBack()
     }
+    func goBack() -> Void {
+        if self.transferType.rawValue == 0 {
+            _ = self.navigationController?.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    /// 当前页面的跳转方式
+    var transferType : SDJGTransfromType {
+        var transfer : SDJGTransfromType = .push
+        let vcCounts = self.navigationController?.viewControllers.count;
+        if vcCounts == nil {
+            transfer = .model
+        } else {
+            if vcCounts! > 1 && (self.navigationController?.viewControllers.last === self) {
+                transfer = .push
+            } else {
+                transfer = .model
+            }
+        }
+        return transfer
+    }
+    
 }

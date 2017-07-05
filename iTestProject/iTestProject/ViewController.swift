@@ -43,25 +43,34 @@ class ViewController: UIViewController {
         btn4.addTarget(self, action: #selector(test4), for: .touchUpInside)
         self.view.addSubview(btn4)
         
+        let btn5 = UIButton(frame: CGRect(x:10,y:300,width:130,height:44))
+        btn5.setTitle("测试Method", for: [])
+        btn5.setTitleColor(UIColor.red, for: [])
+        btn5.addTarget(self, action: #selector(test5), for: .touchUpInside)
+        self.view.addSubview(btn5)
+        
     }
     
     func test1()
     {
-        SDJGUrlRouterManager.transferFromViewController(sourceViewController: self, toURL: NSURL(string: "sdjg://course/main")!, transferType: .push) { (vc, error) in
-                        print(vc)
+        // 测试push
+        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://course/main")!, transferType: .push) { (vc, error) in
+//                        print(vc ?? "")
                     }
     }
     
     func test2()
     {
-        SDJGUrlRouterManager.transferFromViewController(sourceViewController: self, toURL: NSURL(string: "sdjg://questionlib/main")!, transferType: .model) { (vc, error) in
-            print(vc)
+        // 测试model
+        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://questionlib/main")!, transferType: .model,userInfo: nil) { (vc, error) in
+//            print(vc)
         }
     }
     
     func test3()
     {
-        SDJGUrlRouterManager.transferFromViewController(sourceViewController: self, toURL: NSURL(string: "sdjg://test/none")!, transferType: .none) { (vc, error) in
+        // 测试子控制器
+        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://test/none")!, transferType: .none,userInfo: nil) { (vc, error) in
 //            print(vc)
             vc?.view.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
             self.addChildViewController(vc!)
@@ -73,9 +82,18 @@ class ViewController: UIViewController {
     
     func test4()
     {
+        // 跳web页面
         // http://www.sunlands.com http://www.baidu.com
-        SDJGUrlRouterManager.transferFromViewController(sourceViewController: self, toURL: NSURL(string: "sdjg://test/web?weburl=http://www.sunlands.com")!, transferType: .push) { (vc, error) in
-            print(vc)
+        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://test/web?weburl=http://www.sunlands.com")!, transferType: .push) { (vc, error) in
+//            print(vc)
+        }
+    }
+    func test5()
+    {
+        // 调用方法
+        print("\n")
+        SDJGUrlRouterManager.callMethod(withURL: NSURL(string: "sdjg://method/test")!, param: "haha") { (result:Any?) in
+            print(result ?? "")
         }
     }
     
@@ -87,10 +105,6 @@ class ViewController: UIViewController {
             }
             v.removeFromSuperview()
         }
-        // "sdjg://course/main"
-//        SDJGUrlRouterManager.transferFromViewController(sourceViewController: self, toURL: NSURL(string: "sdjg://course/main")!, transferType: .push) { (vc, error) in
-//            print(vc)
-//        }
     }
 }
 

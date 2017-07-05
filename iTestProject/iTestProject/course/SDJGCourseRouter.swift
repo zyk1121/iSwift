@@ -15,5 +15,9 @@ public class SDJGCourseRouter : SDJGRegisterRoutersProtocol {
         SDJGCourseViewController.registerRouterVC("sdjg://course/main")
         TestNoneViewController.registerRouterVC("sdjg://test/none")
         TestWebViewController.registerRouterVC("sdjg://test/web")
+        
+        TestNoneViewController.registerMethod(withURL: "sdjg://method/test")
+        
+        TestABCViewController.registerRouterVC("sdjg://test/abc")
     }
 }
