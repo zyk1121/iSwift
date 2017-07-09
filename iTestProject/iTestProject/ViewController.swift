@@ -12,98 +12,62 @@ import RxSwift
 
 class ViewController: UIViewController {
 
+    var tableViewKeys:[String] = []
+    var tableViewData:[String:String] = [:]
+    
+    var tableView:UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        
-        let btn1 = UIButton(frame: CGRect(x:10,y:100,width:100,height:44))
-        btn1.setTitle("测试push", for: [])
-        btn1.setTitleColor(UIColor.red, for: [])
-        btn1.addTarget(self, action: #selector(test1), for: .touchUpInside)
-        self.view.addSubview(btn1)
-        
-        
-        let btn2 = UIButton(frame: CGRect(x:10,y:150,width:100,height:44))
-        btn2.setTitle("测试model", for: [])
-        btn2.setTitleColor(UIColor.red, for: [])
-        btn2.addTarget(self, action: #selector(test2), for: .touchUpInside)
-        self.view.addSubview(btn2)
-        
-        
-        let btn3 = UIButton(frame: CGRect(x:10,y:200,width:100,height:44))
-        btn3.setTitle("测试-none", for: [])
-        btn3.setTitleColor(UIColor.red, for: [])
-        btn3.addTarget(self, action: #selector(test3), for: .touchUpInside)
-        self.view.addSubview(btn3)
-        
-        
-        let btn4 = UIButton(frame: CGRect(x:10,y:250,width:100,height:44))
-        btn4.setTitle("测试web", for: [])
-        btn4.setTitleColor(UIColor.red, for: [])
-        btn4.addTarget(self, action: #selector(test4), for: .touchUpInside)
-        self.view.addSubview(btn4)
-        
-        let btn5 = UIButton(frame: CGRect(x:10,y:300,width:130,height:44))
-        btn5.setTitle("测试Method", for: [])
-        btn5.setTitleColor(UIColor.red, for: [])
-        btn5.addTarget(self, action: #selector(test5), for: .touchUpInside)
-        self.view.addSubview(btn5)
-        
+        setupData()
+        setupUI()
     }
     
-    func test1()
-    {
-        // 测试push
-        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://course/main")!, transferType: .push) { (vc, error) in
-//                        print(vc ?? "")
-                    }
+    func setupData() {
+        tableViewKeys = ["RxSwift基础","冷热信号","统一监听方法","绑定UI","使用实战"]
+
+        tableViewData = ["RxSwift基础":"sdjg://router/rx/base",
+                         "冷热信号":"sdjg://router/rx/coldhot",
+                         "统一监听方法":"sdjg://router/rx/observe",
+                         "绑定UI":"sdjg://router/rx/bindui",
+                         "使用实战":"sdjg://router/rx/use"]
     }
     
-    func test2()
+    func setupUI()
     {
-        // 测试model
-        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://questionlib/main")!, transferType: .model,userInfo: nil) { (vc, error) in
-//            print(vc)
-        }
+        tableView = UITableView(frame: view.frame, style: .plain)
+        tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "test")
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        tableView?.rowHeight = 70
+        tableView?.tableFooterView = UIView()
+        view.addSubview(tableView!)
+    }
+}
+
+extension ViewController : UITableViewDataSource,UITableViewDelegate
+{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableViewData.count
     }
     
-    func test3()
-    {
-        // 测试子控制器
-        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://test/none")!, transferType: .none,userInfo: nil) { (vc, error) in
-//            print(vc)
-            vc?.view.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
-            self.addChildViewController(vc!)
-            vc?.didMove(toParentViewController: self)
-            self.view.addSubview((vc?.view)!)
-            
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath)
+        cell.textLabel?.text = tableViewKeys[indexPath.row]
+        return cell
     }
     
-    func test4()
-    {
-        // 跳web页面
-        // http://www.sunlands.com http://www.baidu.com
-        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string: "sdjg://test/web?weburl=http://www.sunlands.com")!, transferType: .push) { (vc, error) in
-//            print(vc)
-        }
-    }
-    func test5()
-    {
-        // 调用方法
-        print("\n")
-        SDJGUrlRouterManager.callMethod(withURL: NSURL(string: "sdjg://method/test")!, param: "haha") { (result:Any?) in
-            print(result ?? "")
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        for v in view.subviews {
-            if v.isKind(of: UIButton.self) {
-                continue
-            }
-            v.removeFromSuperview()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let key = tableViewKeys[indexPath.row]
+        let value = tableViewData[key]
+//        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string:value!)!)
+        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string:value!)!, transferType: .push, userInfo: nil) { (vc, error) in
+            vc?.title = key
         }
     }
 }

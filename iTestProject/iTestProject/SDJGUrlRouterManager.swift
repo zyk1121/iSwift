@@ -1,7 +1,7 @@
 //
 //  SDJGUrlRouterManager.swift
 //
-//  Created by 张元科 on 2017/7/4.
+//  Created by 张元科 on 2017/7/5.
 //  Copyright © 2017年 SDJG. All rights reserved.
 //
 
@@ -38,12 +38,11 @@ public typealias SDJGRouterHandler = (_ URL:NSURL, _ transferType:SDJGTransfromT
 // 用于注册Method的闭包定义，会在执行方法的时候执行闭包
 public typealias SDJGMethodHandler = (_ param:Any?)->(Any?)
 
-// MARK:统一的页面跳转方式
+// MARK: - 统一的页面跳转方式
 public class SDJGUrlRouterManager
 {
     // 模块实现的注册router的类名称
-    private static let routerModules:[String] = ["iTestProject.SDJGQuestionLibRouter",
-                                                 "iTestProject.SDJGCourseRouter"]
+    private static let routerModules:[String] = ["iTestProject.RXSwiftRouter"]
     private static var routerMap:Dictionary<String,[SDJGRouterHandler]> = [:]
     private static var methodMap:Dictionary<String,SDJGMethodHandler> = [:]
     
@@ -145,7 +144,7 @@ public class SDJGUrlRouterManager
     // MARK:私有类方法
     private static func _combineHandlerArraysWithKeys(keys:[String]?)->[SDJGRouterHandler]?
     {
-        if keys == nil{
+        if keys == nil {
             return nil
         }
         var tempArray:[SDJGRouterHandler] = [SDJGRouterHandler]()
@@ -174,7 +173,7 @@ public class SDJGUrlRouterManager
     }
 }
 
-// MARK:全局方法
+// MARK: - 全局方法
 func keyFromURL_router(URL:NSURL?)->String?
 {
     guard let url = URL else {
@@ -216,7 +215,7 @@ func extractAllLeftPossibleKeysFromURL_router(URL:NSURL?)->[String]?
 }
 
 
-// MARK:NSURL扩展
+// MARK: - NSURL扩展
 extension NSURL
 {
     public func hasSameTrunkWithURL(URL:NSURL) -> Bool {
@@ -224,7 +223,7 @@ extension NSURL
     }
 }
 
-// MARK:UIViewController扩展(Router & Method)
+// MARK: - UIViewController扩展(Router & Method)
 extension UIViewController {
     
     // VC注册，子类需要的话可以重写
@@ -234,12 +233,11 @@ extension UIViewController {
             return
         }
         SDJGUrlRouterManager.registerRouterWithHandler(handler: { (transferURL:NSURL, transferType:SDJGTransfromType, sourceVC:UIViewController, userInfo:[String:AnyObject]?) -> UIViewController? in
-            
             if transferURL.hasSameTrunkWithURL(URL: tempRouterURL) {
                 let viewController = self.init()
-                if transferType.rawValue == 0 {
+                if transferType == .push {
                     sourceVC.navigationController?.pushViewController(viewController, animated: true)
-                } else if transferType.rawValue == 1{
+                } else if transferType == .model {
                     sourceVC.present(viewController, animated: true, completion: nil)
                 } else {
                 }
@@ -260,12 +258,16 @@ extension UIViewController {
             return
         }
         SDJGUrlRouterManager.registerMethodWithHandler(handler: { (param:Any?) -> (Any?) in
-            return nil
+            return self.callRouterMethod(param: param)
         }, prefixURL: tempMethodURL)
+    }
+    // 默认执行的方法调用，子类需要的话可以重写
+    open static func callRouterMethod(param:Any?) -> Any? {
+        return nil
     }
 }
 
-// MARK:私有定义
+// MARK: - 私有定义
 // 默认注册Portal的Key
 fileprivate let kSDJGDefaultPortalKey = "defaultPortalKeySDJG";
 // 默认注册Method的Key
@@ -275,33 +277,3 @@ fileprivate let kSDJGRouterErrorDomian = "com.sunlands.router.error";
 // Method默认错误Domain
 fileprivate let kSDJGMethodErrorDomian = "com.sunlands.method.error";
 
-/* 暂时无用代码
-/// MARK:UIViewController扩展，当前页面是push，还是present过来的
-extension UIViewController
-{
-    /// 当前页面的跳转方式
-    var transferType : SDJGTransfromType {
-        var transfer : SDJGTransfromType = .push
-        let vcCounts = self.navigationController?.viewControllers.count;
-        if vcCounts == nil {
-            transfer = .model
-        } else {
-            if vcCounts! > 1 && (self.navigationController?.viewControllers.last === self) {
-                transfer = .push
-            } else {
-                transfer = .model
-            }
-        }
-        return transfer
-    }
-    
-    /// 返回方法
-    func goBack() -> Void {
-        if self.transferType.rawValue == 0 {
-            _ = self.navigationController?.popViewController(animated: true)
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-}
-*/
