@@ -11,5 +11,6 @@ target 'iTestProject' do
 	
     pod 'RxSwift', '~> 3.5.0'
     pod 'RxCocoa', '~> 3.5.0'
+    pod 'SnapKit', '~> 3.0.0'
 
 end
