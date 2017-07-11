@@ -13,10 +13,10 @@ import RxCocoa
 class RXSwiftRouter: SDJGRegisterRoutersProtocol {
     static func registerModuleRouters() {
         RXBaseViewController.registerRouterVC("sdjg://router/rx/base")
-        RXBaseViewController.registerRouterVC("sdjg://router/rx/coldhot")
-        RXBaseViewController.registerRouterVC("sdjg://router/rx/observe")
-        RXBaseViewController.registerRouterVC("sdjg://router/rx/bindui")
-        RXBaseViewController.registerRouterVC("sdjg://router/rx/use")
+        RXColdHotViewController.registerRouterVC("sdjg://router/rx/coldhot")
+        RXObserverViewController.registerRouterVC("sdjg://router/rx/observe")
+        RXBindUIViewController.registerRouterVC("sdjg://router/rx/bindui")
+        RXUseViewController.registerRouterVC("sdjg://router/rx/use")
     }
 }
 

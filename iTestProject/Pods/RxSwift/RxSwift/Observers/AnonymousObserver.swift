@@ -29,4 +29,7 @@ final class AnonymousObserver<ElementType> : ObserverBase<ElementType> {
         let _ = Resources.decrementTotal()
     }
 #endif
+    deinit {
+        print("dddd")
+    }
 }

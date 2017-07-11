@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RXBindUIViewController: UIViewController {
 
@@ -14,5 +16,21 @@ class RXBindUIViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
+        notiCenter = NotificationCenter.default
+    }
+    
+    var notiCenter:NotificationCenter?
+    var test:TestClass = ttt
+    
+    deinit {
+        print(self)
+        // 没有对象引用当前对象当前对象就能释放
+    }
+}
+
+let ttt = TestClass()
+class TestClass: NSObject {
+    deinit {
+        print(self)
     }
 }
