@@ -395,6 +395,33 @@ class RXBindUIViewController: UIViewController {
             print(Thread.current)
             print(event)
             }.addDisposableTo(disposeBag)
+        
+        
+        // asDriver drive(bindto)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { 
+            _ = Observable<String>.just("hhhhh").asDriver(onErrorJustReturn: "error").drive(self.label3.rx.text)
+            self.test()
+        }
+        
+        
+        
+    }
+    
+    func test() {
+        
+        // 转换为热序列（热信号）
+        print("~~~~~~~~~")
+        let ob = networkRequest2(param: "12345678").asDriver(onErrorJustReturn: "errr").asObservable()
+        ob.subscribe { (event) in
+            print(event)
+        }
+        ob.subscribe { (event) in
+            print(event)
+        }
+        ob.subscribe { (event) in
+            print(event)
+        }
+        print("~~~~~~~~~")
     }
     
     func networkRequest2(param:String) -> (Observable<String>) {

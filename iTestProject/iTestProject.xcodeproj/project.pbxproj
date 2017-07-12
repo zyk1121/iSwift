@@ -20,6 +20,14 @@
 		766160441F11C98F00439068 /* RXObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766160431F11C98F00439068 /* RXObserverViewController.swift */; };
 		766160461F11C9AA00439068 /* RXBindUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766160451F11C9AA00439068 /* RXBindUIViewController.swift */; };
 		766160481F11C9F900439068 /* RXUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766160471F11C9F900439068 /* RXUseViewController.swift */; };
+		769696AF1F15F6BD00FB29D3 /* RXMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769696AE1F15F6BD00FB29D3 /* RXMVVMViewController.swift */; };
+		769696B11F15F7CD00FB29D3 /* RXMVVMMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769696B01F15F7CD00FB29D3 /* RXMVVMMainView.swift */; };
+		769696B31F15F7E700FB29D3 /* RXMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769696B21F15F7E700FB29D3 /* RXMVVMViewModel.swift */; };
+		769696B51F15F7F300FB29D3 /* RXMVVMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769696B41F15F7F300FB29D3 /* RXMVVMModel.swift */; };
+		769696BA1F15F88E00FB29D3 /* commom_app_bg_image_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 769696B71F15F88E00FB29D3 /* commom_app_bg_image_disabled@2x.png */; };
+		769696BB1F15F88E00FB29D3 /* commom_app_bg_image_heighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 769696B81F15F88E00FB29D3 /* commom_app_bg_image_heighted@2x.png */; };
+		769696BC1F15F88E00FB29D3 /* commom_app_bg_image_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 769696B91F15F88E00FB29D3 /* commom_app_bg_image_normal@2x.png */; };
+		76D102BD1F1662D300A5007D /* RXMVVMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D102BC1F1662D300A5007D /* RXMVVMRequest.swift */; };
 		76D12DF31F0B91A50069465E /* SDJGUrlRouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D12DF21F0B91A50069465E /* SDJGUrlRouterManager.swift */; };
 		76D12DFD1F0BA69B0069465E /* routerList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76D12DFC1F0BA69B0069465E /* routerList.plist */; };
 		CD2D6F428ACBA2324AE2C4D1 /* Pods_iTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083A261443EB0D1A72EC3B1B /* Pods_iTestProject.framework */; };
@@ -64,6 +72,14 @@
 		766160431F11C98F00439068 /* RXObserverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXObserverViewController.swift; sourceTree = "<group>"; };
 		766160451F11C9AA00439068 /* RXBindUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXBindUIViewController.swift; sourceTree = "<group>"; };
 		766160471F11C9F900439068 /* RXUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXUseViewController.swift; sourceTree = "<group>"; };
+		769696AE1F15F6BD00FB29D3 /* RXMVVMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXMVVMViewController.swift; sourceTree = "<group>"; };
+		769696B01F15F7CD00FB29D3 /* RXMVVMMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXMVVMMainView.swift; sourceTree = "<group>"; };
+		769696B21F15F7E700FB29D3 /* RXMVVMViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXMVVMViewModel.swift; sourceTree = "<group>"; };
+		769696B41F15F7F300FB29D3 /* RXMVVMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXMVVMModel.swift; sourceTree = "<group>"; };
+		769696B71F15F88E00FB29D3 /* commom_app_bg_image_disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commom_app_bg_image_disabled@2x.png"; sourceTree = "<group>"; };
+		769696B81F15F88E00FB29D3 /* commom_app_bg_image_heighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commom_app_bg_image_heighted@2x.png"; sourceTree = "<group>"; };
+		769696B91F15F88E00FB29D3 /* commom_app_bg_image_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commom_app_bg_image_normal@2x.png"; sourceTree = "<group>"; };
+		76D102BC1F1662D300A5007D /* RXMVVMRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXMVVMRequest.swift; sourceTree = "<group>"; };
 		76D12DF21F0B91A50069465E /* SDJGUrlRouterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDJGUrlRouterManager.swift; sourceTree = "<group>"; };
 		76D12DFC1F0BA69B0069465E /* routerList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = routerList.plist; sourceTree = "<group>"; };
 		C6B059B59BFFFCA322DA1E6D /* Pods-iTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTestProject/Pods-iTestProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,14 +179,62 @@
 		7661603C1F11C4C900439068 /* RXSwift */ = {
 			isa = PBXGroup;
 			children = (
+				769696B61F15F88E00FB29D3 /* images */,
 				7661603D1F11C4E600439068 /* RXSwiftRouter.swift */,
 				7661603F1F11C93300439068 /* RXBaseViewController.swift */,
 				766160411F11C95700439068 /* RXColdHotViewController.swift */,
 				766160431F11C98F00439068 /* RXObserverViewController.swift */,
 				766160451F11C9AA00439068 /* RXBindUIViewController.swift */,
 				766160471F11C9F900439068 /* RXUseViewController.swift */,
+				769696AA1F15F67F00FB29D3 /* mvvm */,
 			);
 			path = RXSwift;
+			sourceTree = "<group>";
+		};
+		769696AA1F15F67F00FB29D3 /* mvvm */ = {
+			isa = PBXGroup;
+			children = (
+				769696AB1F15F6A600FB29D3 /* model */,
+				769696AC1F15F6A600FB29D3 /* view */,
+				769696AD1F15F6A600FB29D3 /* viewmodel */,
+				769696AE1F15F6BD00FB29D3 /* RXMVVMViewController.swift */,
+			);
+			path = mvvm;
+			sourceTree = "<group>";
+		};
+		769696AB1F15F6A600FB29D3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				769696B41F15F7F300FB29D3 /* RXMVVMModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		769696AC1F15F6A600FB29D3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				769696B01F15F7CD00FB29D3 /* RXMVVMMainView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		769696AD1F15F6A600FB29D3 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				769696B21F15F7E700FB29D3 /* RXMVVMViewModel.swift */,
+				76D102BC1F1662D300A5007D /* RXMVVMRequest.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		769696B61F15F88E00FB29D3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				769696B71F15F88E00FB29D3 /* commom_app_bg_image_disabled@2x.png */,
+				769696B81F15F88E00FB29D3 /* commom_app_bg_image_heighted@2x.png */,
+				769696B91F15F88E00FB29D3 /* commom_app_bg_image_normal@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		F094E9FE5B19CBFA3087D12F /* Frameworks */ = {
@@ -295,7 +359,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				762E22231F07A6120016D097 /* LaunchScreen.storyboard in Resources */,
+				769696BC1F15F88E00FB29D3 /* commom_app_bg_image_normal@2x.png in Resources */,
+				769696BB1F15F88E00FB29D3 /* commom_app_bg_image_heighted@2x.png in Resources */,
 				762E22201F07A6120016D097 /* Assets.xcassets in Resources */,
+				769696BA1F15F88E00FB29D3 /* commom_app_bg_image_disabled@2x.png in Resources */,
 				762E221E1F07A6120016D097 /* Main.storyboard in Resources */,
 				76D12DFD1F0BA69B0069465E /* routerList.plist in Resources */,
 			);
@@ -374,10 +441,15 @@
 				766160481F11C9F900439068 /* RXUseViewController.swift in Sources */,
 				762E221B1F07A6120016D097 /* ViewController.swift in Sources */,
 				766160441F11C98F00439068 /* RXObserverViewController.swift in Sources */,
+				769696B31F15F7E700FB29D3 /* RXMVVMViewModel.swift in Sources */,
+				76D102BD1F1662D300A5007D /* RXMVVMRequest.swift in Sources */,
 				766160461F11C9AA00439068 /* RXBindUIViewController.swift in Sources */,
 				766160401F11C93300439068 /* RXBaseViewController.swift in Sources */,
+				769696AF1F15F6BD00FB29D3 /* RXMVVMViewController.swift in Sources */,
+				769696B11F15F7CD00FB29D3 /* RXMVVMMainView.swift in Sources */,
 				76D12DF31F0B91A50069465E /* SDJGUrlRouterManager.swift in Sources */,
 				7661603E1F11C4E600439068 /* RXSwiftRouter.swift in Sources */,
+				769696B51F15F7F300FB29D3 /* RXMVVMModel.swift in Sources */,
 				762E22191F07A6120016D097 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,6 @@ final class AnonymousObserver<ElementType> : ObserverBase<ElementType> {
     }
 #endif
     deinit {
-        print("dddd")
+//        print("dddd")
     }
 }

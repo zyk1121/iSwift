@@ -17,6 +17,7 @@ class RXSwiftRouter: SDJGRegisterRoutersProtocol {
         RXObserverViewController.registerRouterVC("sdjg://router/rx/observe")
         RXBindUIViewController.registerRouterVC("sdjg://router/rx/bindui")
         RXUseViewController.registerRouterVC("sdjg://router/rx/use")
+        RXMVVMViewController.registerRouterVC("sdjg://router/rx/mvvm")
     }
 }
 

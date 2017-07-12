@@ -16,6 +16,8 @@ class RXUseViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
+        
+        SDJGUrlRouterManager.router(sourceVC: self, toURL: NSURL(string:"sdjg://router/rx/mvvm")!)
     }
-
+    
 }
