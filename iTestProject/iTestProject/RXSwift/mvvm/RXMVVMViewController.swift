@@ -22,8 +22,8 @@ class RXMVVMViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
-//        self.title = "MVVM"
-        Observable<String>.just("MVVM").bind(to: self.rx.title).addDisposableTo(disposeBag)
+        self.title = "MVVM"
+//        Observable<String>.just("MVVM").bind(to: self.rx.title).addDisposableTo(disposeBag)
         setupUI()
         bindUI()
         view.setNeedsUpdateConstraints()

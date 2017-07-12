@@ -22,3 +22,35 @@ class UserModel: NSObject {
     }
     
 }
+
+class UserModel2: NSObject {
+    var userName:String
+    var password:String
+    var age:Int = 0
+    var isLogin:Bool = false
+    
+    override init() {
+        userName = ""
+        password = ""
+        
+        super.init()
+    }
+    
+}
+
+
+class UserModel3: NSObject {
+    var userName:String
+    var password:String
+    var age:Int = 0
+    var isLogin:Bool = false
+    
+    override init() {
+        userName = ""
+        password = ""
+        
+        super.init()
+    }
+    
+}
+

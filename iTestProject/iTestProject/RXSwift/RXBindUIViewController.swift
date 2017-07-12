@@ -93,6 +93,14 @@ class RXBindUIViewController: UIViewController {
         bindUI()
         updateViewConstraints()
         view.updateConstraintsIfNeeded()
+        testTimer()
+    }
+    
+    func testTimer() {
+         Observable<NSInteger>.interval(1, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { (sec) in
+                print("\(sec) s")
+            }, onError: nil, onCompleted: nil, onDisposed: nil).addDisposableTo(disposeBag)
     }
     
     func setupData() {
@@ -605,6 +613,7 @@ class RXBindUIViewController: UIViewController {
     }
 
     deinit {
+        // timer也能自动释放
         print(self)
     }
 }
