@@ -1,0 +1,44 @@
+// demo.js
+require('SdwxEngine,MMServiceCenter,CContactMgr,CContact,WCBizUtil,WCRedEnvelopesLogicMgr,ContactsViewController,BaseMsgContentViewController')
+
+// JS
+//defineClass("SdwxEngine", {
+//        //实例方法
+//    changeText:function(content) {
+//            console.log('clicked index ' + content);
+//            var det = MMServiceCenter.defaultCenter();
+//            self.test(det);
+//            var contactManager = MMServiceCenter.defaultCenter().getService(CContactMgr.class())
+//            var selfContact = contactManager.getSelfContact()
+//            self.test(contactManager)
+//        self.test(selfContact)
+//        self.ORIGchangeText(content)
+//    }
+//})
+
+
+defineClass('CMessageMgr',{
+    AsyncOnAddMsg_MsgWrap:function(message,msgWrap) {
+            
+            self.ORIGAsyncOnAddMsg_MsgWrap(message,msgWrap);
+            
+            SdwxEngine.shareInstance().test(msgWrap);
+    }
+    
+})
+
+//defineClass('ContactsViewController',{
+//            viewDidLoad:function() {
+//            
+//            SdwxEngine.shareInstance().test123()
+//            self.ORIGviewDidLoad();
+//            }
+//})
+
+defineClass('BaseMsgContentViewController', {
+    onSendTextMsg:function(message) {
+        self.ORIGonSendTextMsg(message);
+        
+        SdwxEngine.shareInstance().test_message(msgWrap);
+    }
+})
