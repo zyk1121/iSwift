@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>sdjg://messagepage</key>
+	<string>消息主页面</string>
+	<key>sdjg://homepage</key>
+	<string>主页面</string>
+</dict>
+</plist>
