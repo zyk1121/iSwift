@@ -4,10 +4,11 @@ import os
 import shutil
 
 # 版本号
-oldVersion = "1.0.1"
-newVerison = "1.0.1"
-# 文件夹名称[对应开发者账号名称，chensun对应的是主目录的相关文件]
-developers = ["chensun"]
+oldVersion = "1.0.2"
+newVerison = "1.0.3"
+# 文件夹名称[对应开发者账号名称，chensun对应的是主目录的相关文件] 
+# "chensun","yunfeima","hailongchen","houhualin","hucehngwen","baotaiyu","lizhipeng","wanghongdan"
+developers = ["chensun","yunfeima","hailongchen","houhualin","hucehngwen","baotaiyu","lizhipeng","wanghongdan"]
 
 # 定义创建文件夹方法
 def mkdir(path):
@@ -49,7 +50,7 @@ print("1、version.json和wechat.html文件修改版本号v" + newVerison + "成
 for file in developers:
     mkdir(file)
     mycopyfile("wechat.plist",file + "/wechat.plist")
-    alter(file + "/wechat.plist", "/wxchat.ipa","/" + file + "/wxchat.ipa")
+    alter(file + "/wechat.plist", "/wechat.ipa","/" + file + "/wechat.ipa")
     mycopyfile("wechat.html",file + "/wechat.html")
     alter(file + "/wechat.html", "/wechat.plist","/" + file + "/wechat.plist")
 
